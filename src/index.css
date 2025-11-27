@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,11 +48,25 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(220 90% 55%) 100%);
     --gradient-gaming: linear-gradient(135deg, hsl(280 65% 58%) 0%, hsl(35 100% 55%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(220 25% 8%) 0%, hsl(220 30% 12%) 100%);
-    
+
     --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --shadow-sm: 0px 1px 50px 0px hsla(0, 0%, 0%, 0.3);
+
+    --shadow: 0px 1px 100px 0px hsla(0, 0%, 0%, 0.3);
+
+    --shadow-md: 0px 1px 150px 0px hsla(0, 0%, 0%, 0.3);
+
+    --shadow-lg: 0px 1px 250px 0px hsla(0, 0%, 0%, 0.3);
+  }
+  .dark {
+    --shadow-sm: 0px 1px 50px 0px hsla(0, 0%, 0%, 0.3);
+    --shadow: 0px 1px 100px 0px hsla(0, 0%, 0%, 0.3);
+    --shadow-md: 0px 1px 150px 0px hsla(0, 0%, 0%, 0.3);
+    --shadow-lg: 0px 1px 250px 0px hsla(0, 0%, 0%, 0.3);
   }
 }
 
