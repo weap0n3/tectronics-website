@@ -1,21 +1,65 @@
+import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
-export const ProductCard = ({ item }) => {
+interface ProductCardProps {
+	item: {
+		id: number
+		name: string
+		price: number
+		photo: string
+		description: string
+		link: string
+	}
+	startPosition: string
+}
+
+export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
+	const [isVisible, setIsVisible] = useState(false)
+
+	const targetRef = useRef(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					setIsVisible(entry.isIntersecting)
+				})
+			},
+			{ root: null, threshold: 0, rootMargin: '0px 0px -25% 0px' }
+		)
+
+		if (targetRef.current) {
+			observer.observe(targetRef.current)
+		}
+
+		return () => observer.disconnect()
+	}, [])
+
 	return (
 		<div
-			className='flex rounded-lg m-4 p-0 overflow-hidden h-96 border w-[1200px]'
-			key={item.id}
+			ref={targetRef}
+			id={`product-card-${item.id}`}
+			className={clsx(
+				'flex rounded-lg m-4 p-0 overflow-hidden h-[500px] border w-[1100px] duration-1000 ease-in-out',
+				!isVisible && startPosition,
+				isVisible && 'opacity-100 translate-x-0',
+				!isVisible && 'opacity-0'
+			)}
 		>
 			<div className='w-[60%]'>
 				<img
 					src={item.photo}
-					className='h-full w-full object-contain'
+					className='h-full w-full object-cover'
 					alt='Product Image'
 				/>
 			</div>
 			<div className='bg-muted/30 px-14 flex flex-col justify-around w-[40%]'>
-				<h1 className='text-6xl'>{item.name}</h1>
-				<p className=''>{item.description}</p>
+				<h1 className='text-4xl'>{item.name}</h1>
+				<p className='' lang='10'>
+					{item.description}
+				</p>
+				<button>Mehr Details</button>
 				<div className='flex justify-between items-center'>
 					<p className='text-4xl text-sky-500 font-bold'>
 						{item.price.toFixed(2)} €

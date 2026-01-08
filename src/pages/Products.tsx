@@ -6,10 +6,18 @@ const Products = () => {
 	return (
 		<main>
 			<Navigation />
-			<section className='pt-20 pb-7'>
+			<section className='pt-20 pb-7 overflow-x-hidden'>
 				<div className='flex flex-col w-full items-center justify-center '>
 					{products.map(item => (
-						<ProductCard key={item.id} item={item} />
+						<ProductCard
+							key={item.id}
+							item={item}
+							startPosition={
+								item.id % 2 == 0
+									? 'translate-x-[-1500px]'
+									: 'translate-x-[1500px]'
+							}
+						/>
 					))}
 				</div>
 			</section>
