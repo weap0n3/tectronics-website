@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,74 +8,86 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
-    --background: 220 25% 8%;
-    --foreground: 210 40% 98%;
+	:root {
+		--background: 220 25% 8%;
+		--foreground: 210 40% 98%;
 
-    --card: 220 22% 12%;
-    --card-foreground: 210 40% 98%;
+		--card: 220 22% 12%;
+		--card-foreground: 210 40% 98%;
 
-    --popover: 220 22% 12%;
-    --popover-foreground: 210 40% 98%;
+		--popover: 220 22% 12%;
+		--popover-foreground: 210 40% 98%;
 
-    --primary: 195 100% 50%;
-    --primary-foreground: 220 25% 8%;
+		--primary: 195 100% 50%;
+		--primary-foreground: 220 25% 8%;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 210 40% 98%;
+		--secondary: 220 20% 18%;
+		--secondary-foreground: 210 40% 98%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 215 20% 65%;
+		--muted: 220 20% 15%;
+		--muted-foreground: 215 20% 65%;
 
-    --accent: 35 100% 55%;
-    --accent-foreground: 220 25% 8%;
+		--accent: 35 100% 55%;
+		--accent-foreground: 220 25% 8%;
 
-    --gaming: 280 65% 58%;
-    --gaming-foreground: 210 40% 98%;
+		--gaming: 280 65% 58%;
+		--gaming-foreground: 210 40% 98%;
 
-    --tech: 195 100% 50%;
-    --tech-foreground: 220 25% 8%;
+		--tech: 195 100% 50%;
+		--tech-foreground: 220 25% 8%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+		--destructive: 0 84% 60%;
+		--destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 18%;
-    --ring: 195 100% 50%;
+		--border: 220 20% 20%;
+		--input: 220 20% 18%;
+		--ring: 195 100% 50%;
 
-    --radius: 0.75rem;
+		--radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(220 90% 55%) 100%);
-    --gradient-gaming: linear-gradient(135deg, hsl(280 65% 58%) 0%, hsl(35 100% 55%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 8%) 0%, hsl(220 30% 12%) 100%);
+		--gradient-primary: linear-gradient(
+			135deg,
+			hsl(195 100% 50%) 0%,
+			hsl(220 90% 55%) 100%
+		);
+		--gradient-gaming: linear-gradient(
+			135deg,
+			hsl(280 65% 58%) 0%,
+			hsl(35 100% 55%) 100%
+		);
+		--gradient-hero: linear-gradient(
+			180deg,
+			hsl(220 25% 8%) 0%,
+			hsl(220 30% 12%) 100%
+		);
 
-    --shadow-glow: 0 0 40px hsl(195 100% 50% / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+		--shadow-glow: 0 0 40px hsl(195 100% 50% / 0.3);
+		--shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
 
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		--transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --shadow-sm: 0px 1px 1.5px 0px hsla(0, 0%, 0%, 0.3);
+		--shadow-sm: 0px 1px 1.5px 0px hsla(0, 0%, 0%, 0.3);
 
-    --shadow: 0px 1px 3px 0px hsla(0, 0%, 0%, 0.3);
+		--shadow: 0px 1px 3px 0px hsla(0, 0%, 0%, 0.3);
 
-    --shadow-md: 0px 1px 4.5px 0px hsla(0, 0%, 0%, 0.3);
+		--shadow-md: 0px 1px 4.5px 0px hsla(0, 0%, 0%, 0.3);
 
-    --shadow-lg: 0px 1px 7.5px 0px hsla(0, 0%, 0%, 0.3);
-  }
-  .dark {
-    --shadow-sm: 0px 1px 1.5px 0px hsla(0, 0%, 0%, 0.3);
-    --shadow: 0px 1px 3px 0px hsla(0, 0%, 0%, 0.3);
-    --shadow-md: 0px 1px 4.5px 0px hsla(0, 0%, 0%, 0.3);
-    --shadow-lg: 0px 1px 7.5px 0px hsla(0, 0%, 0%, 0.3);
-  }
+		--shadow-lg: 0px 1px 7.5px 0px hsla(0, 0%, 0%, 0.3);
+	}
+	.dark {
+		--shadow-sm: 0px 1px 1.5px 0px hsla(0, 0%, 0%, 0.3);
+		--shadow: 0px 1px 3px 0px hsla(0, 0%, 0%, 0.3);
+		--shadow-md: 0px 1px 4.5px 0px hsla(0, 0%, 0%, 0.3);
+		--shadow-lg: 0px 1px 7.5px 0px hsla(0, 0%, 0%, 0.3);
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+	* {
+		@apply border-border;
+	}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+	body {
+		@apply bg-background text-foreground;
+	}
 }
