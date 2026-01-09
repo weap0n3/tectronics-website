@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ArrowUpRightFromSquare } from 'lucide-react'
+import { ArrowUpRightFromSquare, MoveUpRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 interface ProductCardProps {
@@ -54,26 +54,40 @@ export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
 					alt='Product Image'
 				/>
 			</div>
-			<div className='bg-muted/30 px-14 flex flex-col justify-around w-[40%]'>
+			<div className='bg-muted/30 px-11 flex flex-col justify-evenly w-[40%]'>
 				<h1 className='text-4xl'>{item.name}</h1>
-				<p className='' lang='10'>
-					{item.description}
-				</p>
-				<button>Mehr Details</button>
+				<div className=''>
+					<p className='line-clamp-6 mb-2' lang='10'>
+						{item.description}
+					</p>
+					<div className='group w-full justify-center flex items-center p-3 gap-2 bg-muted/30 hover:bg-muted rounded-lg cursor-pointer hover:scale-105 duration-300 ease-in-out shadow-md shadow-black/20'>
+						<div>
+							<MoveUpRight
+								className='absolute translate-x-0 translate-y-0 group-hover:translate-x-[110%] group-hover:translate-y-[-110%] group-hover:opacity-0 group-hover:bg-muted duration-300 ease-in-out'
+								size={18}
+							/>
+							<MoveUpRight
+								className='opacity-0 translate-x-[-110%] translate-y-[110%] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 duration-300 ease-in-out '
+								size={18}
+							/>
+						</div>
+						<button>Mehr Details</button>
+					</div>
+				</div>
 				<div className='flex justify-between items-center'>
 					<p className='text-4xl text-sky-500 font-bold'>
 						{item.price.toFixed(2)} €
 					</p>
-					<div className='relative w-1/2 rounded-lg overflow-hidden shadow-sky-600 shadow-glow cursor-pointer hover:scale-110 duration-700 ease-out before:absolute before:inset-0 before:bg-gradient-primary before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-500 before:ease-in-out'>
-						<div className='relative z-10 flex justify-between items-center p-3'>
-							<a className='text-xl' href={item.link} target='_blank'>
+					<button className='relative w-1/2 rounded-lg overflow-hidden shadow-sky-600 shadow-glow cursor-pointer hover:scale-110 duration-700 ease-out hover:bg-gradient-primary'>
+						<div className='z-10 flex justify-between items-center p-2 px-3'>
+							<a className='text-lg' href={item.link} target='_blank'>
 								Marketplace
 							</a>
 							<span>
-								<ArrowUpRightFromSquare />
+								<ArrowUpRightFromSquare size={20} />
 							</span>
 						</div>
-					</div>
+					</button>
 				</div>
 			</div>
 		</div>
