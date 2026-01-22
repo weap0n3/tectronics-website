@@ -90,11 +90,13 @@ const Footer = () => {
 							</li>
 							<li className='flex items-center gap-2'>
 								<Mail className='w-4 h-4' />
-								<span>info@tectronics.at</span>
+								<a href='mailto:tectronics2816@uebungsfirmen.at'>
+									tectronics2816@uebungsfirmen.at
+								</a>
 							</li>
 							<li className='flex items-center gap-2'>
 								<Phone className='w-4 h-4' />
-								<span>+43 123 456 789</span>
+								<span>+43 06542/57588-530</span>
 							</li>
 						</ul>
 					</div>
