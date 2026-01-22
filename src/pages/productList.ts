@@ -59,7 +59,7 @@ export const PRODUCTS: Product[] = [
 		photo: 'Office365Ultra.jpg',
 		description:
 			'Microsoft Office 365 Ultra bietet eine umfassende Suite von Produktivitätsanwendungen und Cloud-Diensten für Unternehmen und Einzelpersonen. Mit halbjährlicher Abrechnung ermöglicht es den Zugriff auf Anwendungen wie Word, Excel, PowerPoint und Outlook sowie Cloud-Speicher über OneDrive. Ideal für effizientes Arbeiten und Zusammenarbeit. Halbjährliches Abonnement für Microsoft 365. Mit diesen Paket werden Ihnen nur die Apps zur Verfügung gestellt und 4TB Cloudspeicher. Preis zzgl. Versand- bzw. Transportkosten',
-		link: '',
+		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 	{
 		id: 7,
@@ -68,7 +68,7 @@ export const PRODUCTS: Product[] = [
 		photo: 'GamingMousePad.jpg',
 		description:
 			'Gaming-Mauspad in neuwertigem Zustand und einer glatten Oberfläche für präzise Mausbewegungen und optimaler Kontrolle. Die rutschfeste Unterseite sorgt für Stabilität während intensiver Spielsitzungen. Ideal für Gamer und Bürogebrauch! Perfekt für jedes Setup! Größe: 800 × 300 × 3 mm Preis zzgl. Versand- bzw. Transportkosten',
-		link: '',
+		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 	{
 		id: 8,
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
 		photo: 'GamingKeyboard.jpg',
 		description:
 			'Hochwertige Gaming-Tastatur in ausgezeichnetem Zustand! Mechanische Tasten für schnelles und präzises Tippen. RGB-Hintergrundbeleuchtung für individuelles Design. Ergonomisches Design und robuste Bauweise für lange Sessions. Preis zzgl. Versand- bzw. Transportkosten',
-		link: '',
+		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 	{
 		id: 9,
@@ -86,6 +86,6 @@ export const PRODUCTS: Product[] = [
 		photo: 'FirewallCisco.jpg',
 		description:
 			'Der Cisco ASA 5508-K9 ist eine leistungsstarke, flexible Sicherheits-Appliance, die für kleine bis mittelgroße Unternehmen konzipiert ist. Mit integrierter Firewallschutz, VPN-Funktionalitäten und umfassendem Bedrohungsschutz bietet er umfassende Sicherheitslösungen für Netzwerke. Die Appliance unterstützt eine hohe Anzahl an gleichzeitigen Verbindungen und bietet skalierbare Lizenzoptionen, um den wachsenden Anforderungen gerecht zu werden. Ideal für Unternehmen, die eine robuste Netzwerksicherheit benötigen, kombiniert der ASA 5508-K9 Effizienz mit einfacher Verwaltung über die intuitive Benutzeroberfläche. Preis zzgl. Versand- bzw. Transportkosten',
-		link: '',
+		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 ]

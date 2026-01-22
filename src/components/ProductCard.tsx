@@ -1,16 +1,10 @@
+import { Product } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare, MoveUpRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 interface ProductCardProps {
-	item: {
-		id: number
-		name: string
-		price: number
-		photo: string
-		description: string
-		link: string
-	}
+	item: Product
 	startPosition: string
 }
 
@@ -26,7 +20,7 @@ export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
 					setIsVisible(entry.isIntersecting)
 				})
 			},
-			{ root: null, threshold: 0, rootMargin: '0px 0px -25% 0px' }
+			{ root: null, threshold: 0, rootMargin: '0px 0px -25% 0px' },
 		)
 
 		if (targetRef.current) {
