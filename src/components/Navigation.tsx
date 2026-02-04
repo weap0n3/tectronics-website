@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
@@ -60,12 +59,6 @@ const Navigation = () => {
 								{item.label}
 							</a>
 						))}
-						<Button
-							variant='default'
-							className='w-full mt-4 bg-gradient-primary'
-						>
-							Kontakt
-						</Button>
 					</div>
 				)}
 			</div>
