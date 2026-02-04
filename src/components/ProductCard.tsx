@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { ArrowUpRightFromSquare, MoveUpRight } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { ProductInfo } from './ProductInfo'
+import { Button } from './ui/button'
 
 interface ProductCardProps {
 	item: Product
@@ -79,16 +80,16 @@ export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
 						<p className='text-4xl text-sky-500 font-bold'>
 							{item.price.toFixed(2)} €
 						</p>
-						<button className='relative w-1/2 rounded-lg overflow-hidden shadow-sky-600 shadow-glow cursor-pointer hover:scale-110 duration-700 ease-out hover:bg-gradient-primary'>
-							<div className='z-10 flex justify-between items-center p-2 px-3'>
-								<a className='text-lg' href={item.link} target='_blank'>
-									Marketplace
-								</a>
-								<span>
-									<ArrowUpRightFromSquare size={20} />
-								</span>
-							</div>
-						</button>
+						<a href={item.link} target='_blank'>
+							<Button
+								variant='default'
+								size='lg'
+								className='text-lg hover:bg-primary/80 hover:scale-105 transition-all duration-300 ease-in-out'
+							>
+								Marketplace
+								<ArrowUpRightFromSquare size={18} className='ml-2' />
+							</Button>
+						</a>
 					</div>
 				</div>
 			</div>
