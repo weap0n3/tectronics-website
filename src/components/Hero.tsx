@@ -35,20 +35,24 @@ const Hero = () => {
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
-						<Button
-							size='lg'
-							className='bg-gradient-primary shadow-glow hover:shadow-glow hover:scale-105 transition-all'
-						>
-							Entdecke unsere Services
-							<ArrowRight className='ml-2 w-5 h-5' />
-						</Button>
-						<Button
-							size='lg'
-							variant='secondary'
-							className='hover:scale-105 transition-transform'
-						>
-							Mehr erfahren
-						</Button>
+						<a href='/products'>
+							<Button
+								size='lg'
+								className='bg-gradient-primary shadow-glow hover:shadow-glow hover:scale-105 transition-all'
+							>
+								Entdecke unsere Services
+								<ArrowRight className='ml-2 w-5 h-5' />
+							</Button>
+						</a>
+						<a href='#about'>
+							<Button
+								size='lg'
+								variant='secondary'
+								className='hover:scale-105 transition-transform'
+							>
+								Mehr erfahren
+							</Button>
+						</a>
 					</div>
 
 					{/*<div className='grid grid-cols-2 md:grid-cols-4 gap-8 mt-16'>
