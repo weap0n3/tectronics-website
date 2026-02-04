@@ -17,12 +17,14 @@ const Navigation = () => {
 		<nav className='fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border'>
 			<div className='container mx-auto px-4'>
 				<div className='flex items-center justify-between h-16'>
-					<div className='flex items-center space-x-2'>
-						<img src='/Logo.png' width={35} alt='' />
-						<span className='text-xl font-bold text-foreground'>
-							TecTronics
-						</span>
-					</div>
+					<a href='/'>
+						<div className='flex items-center space-x-2'>
+							<img src='/Logo.png' width={35} alt='' />
+							<span className='text-xl font-bold text-foreground'>
+								TecTronics
+							</span>
+						</div>
+					</a>
 
 					{/* Desktop Navigation */}
 					<div className='hidden md:flex items-center space-x-8'>
