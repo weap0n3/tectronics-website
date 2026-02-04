@@ -51,7 +51,7 @@ const Hero = () => {
 						</Button>
 					</div>
 
-					<div className='grid grid-cols-2 md:grid-cols-4 gap-8 mt-16'>
+					{/*<div className='grid grid-cols-2 md:grid-cols-4 gap-8 mt-16'>
 						{[
 							{ label: 'Abteilungen', value: '2+' },
 							{ label: 'Produkte', value: '50+' },
@@ -68,6 +68,7 @@ const Hero = () => {
 							</div>
 						))}
 					</div>
+					*/}
 				</div>
 			</div>
 		</section>
