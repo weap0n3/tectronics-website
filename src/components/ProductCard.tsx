@@ -1,7 +1,8 @@
 import { Product } from '@/types/product.interface'
 import clsx from 'clsx'
-import { ArrowUpRightFromSquare, MoveUpRight } from 'lucide-react'
+import { ArrowUpRightFromSquare } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { MovingArrow } from './custom-ui/MovingArrow'
 import { ProductInfo } from './ProductInfo'
 import { Button } from './ui/button'
 
@@ -60,22 +61,14 @@ export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
 							{item.description}
 						</p>
 					</div>
-					<div
-						className='group w-full justify-center flex items-center p-3 gap-2 bg-muted/30 hover:bg-muted rounded-lg cursor-pointer hover:scale-105 duration-300 ease-in-out shadow-md shadow-black/20'
+					<Button
+						variant='secondary'
+						className='group bg-muted/30 hover:bg-muted hover:scale-105 duration-300 ease-in-out shadow-md shadow-black/20 text-base h-11 '
 						onClick={() => setIsMoreInfoVisible(!isMoreInfoVisible)}
 					>
-						<div>
-							<MoveUpRight
-								className='absolute translate-x-0 translate-y-0 group-hover:translate-x-[110%] group-hover:translate-y-[-110%] group-hover:opacity-0 group-hover:bg-muted duration-300 ease-in-out'
-								size={18}
-							/>
-							<MoveUpRight
-								className='opacity-0 translate-x-[-110%] translate-y-[110%] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 duration-300 ease-in-out '
-								size={18}
-							/>
-						</div>
-						<button>Mehr Details</button>
-					</div>
+						<MovingArrow />
+						Mehr Details
+					</Button>
 					<div className='flex justify-between items-center'>
 						<p className='text-4xl text-sky-500 font-bold'>
 							{item.price.toFixed(2)} €
