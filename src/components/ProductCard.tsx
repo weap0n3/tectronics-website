@@ -4,7 +4,7 @@ import { ArrowUpRightFromSquare } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { MovingArrow } from './custom-ui/MovingArrow'
 import { ProductInfo } from './ProductInfo'
-import { Button } from './ui/button'
+import { Button } from './ui/button/Button'
 
 interface ProductCardProps {
 	item: Product
