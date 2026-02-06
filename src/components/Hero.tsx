@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button/Button'
+import { Button } from '@/components/ui/button.tsx'
 import { ArrowRight, BriefcaseBusiness } from 'lucide-react'
 
 const Hero = () => {

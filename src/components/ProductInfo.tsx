@@ -1,8 +1,8 @@
+import { Button } from '@/components/ui/button.tsx'
 import { PRODUCTS } from '@/pages/productList'
 import { Product } from '@/types/product.interface'
 import { ArrowLeft } from 'lucide-react'
 import { useEffect } from 'react'
-import { Button } from './ui/button/Button'
 
 const getCardById = (id: number): Product => {
 	return PRODUCTS.find(card => card.id === id)!
