@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button.tsx'
+import { useProductCard } from '@/hooks/useProductCard'
 import { Product } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
 import { MovingArrow } from './custom-ui/MovingArrow'
 import { ProductInfo } from './ProductInfo'
 
@@ -12,29 +12,8 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
-	const [isVisible, setIsVisible] = useState(false)
-
-	const [isMoreInfoVisible, setIsMoreInfoVisible] = useState(false)
-
-	const targetRef = useRef(null)
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					setIsVisible(entry.isIntersecting)
-				})
-			},
-			{ root: null, threshold: 0, rootMargin: '0px 0px -25% 0px' },
-		)
-
-		if (targetRef.current) {
-			observer.observe(targetRef.current)
-		}
-
-		return () => observer.disconnect()
-	}, [])
-
+	const { isVisible, isMoreInfoVisible, targetRef, setIsMoreInfoVisible } =
+		useProductCard()
 	return (
 		<>
 			<div
