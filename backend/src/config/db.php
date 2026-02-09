@@ -13,14 +13,14 @@ $username   = $_ENV['DB_USER'];
 $password   = $_ENV['DB_PASS'];
 $dbname     = $_ENV['DB_NAME'];
 
-echo "Attempting to connect to database at $servername with user $username...";
+$dsn = "mysql:host=$servername;dbname=$dbname;charset=utf8mb4";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO($dsn, $username, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+} catch (PDOException $e) {
+    header('Content-Type: application/json', true, 500);
+    echo json_encode(['error' => 'Database connection failed']);
+    exit;
 }
-echo "Connected successfully";
-?>
