@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button.tsx'
-import { PRODUCTS } from '@/pages/productList'
-import { Product } from '@/types/product.interface'
+import { IProduct } from '@/types/product.interface'
 import { ArrowLeft } from 'lucide-react'
 import { useEffect } from 'react'
 

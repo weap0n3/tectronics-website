@@ -4,9 +4,9 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Snowfall from 'react-snowfall'
-import Index from './pages/Index'
-import NotFound from './pages/NotFound'
-import Products from './pages/Products'
+import Index from '@/pages/Index'
+import NotFound from '@/pages/NotFound'
+import Products from '@/pages/Products'
 
 const queryClient = new QueryClient()
 

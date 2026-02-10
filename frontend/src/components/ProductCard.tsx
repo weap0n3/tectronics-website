@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button.tsx'
 import { useProductCard } from '@/hooks/useProductCard'
-import { Product } from '@/types/product.interface'
+import { IProduct } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'
 import { MovingArrow } from './custom-ui/MovingArrow'

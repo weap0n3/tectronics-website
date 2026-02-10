@@ -1,6 +1,9 @@
 import Footer from '@/components/Footer.tsx'
+import Navigation from '@/components/Navigation.tsx'
 import { ProductCard } from '@/components/ProductCard.tsx'
-import Navigation from '../components/Navigation.tsx'
+import { ProductsService } from '@/services/products.service.ts'
+import { IProduct } from '@/types/product.interface.ts'
+import { useEffect, useState } from 'react'
 import { PRODUCTS } from './productList.ts'
 const Products = () => {
 	return (
