@@ -1,15 +1,17 @@
 import { Button } from '@/components/ui/button.tsx'
 import { IProduct } from '@/types/product.interface'
 import { ArrowLeft } from 'lucide-react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-const getCardById = (id: number): Product => {
-	return PRODUCTS.find(card => card.id === id)!
+interface IProductInfoProps {
+	setIsMoreInfoVisible: React.Dispatch<React.SetStateAction<boolean>>
+	product: IProduct
 }
 
-export const ProductInfo = ({ setIsMoreInfoVisible, product }) => {
-	const productToShow = getCardById(product.id)
-
+export const ProductInfo = ({
+	setIsMoreInfoVisible,
+	product,
+}: IProductInfoProps) => {
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
 		return () => {
@@ -35,23 +37,17 @@ export const ProductInfo = ({ setIsMoreInfoVisible, product }) => {
 				<div className='flex gap-6'>
 					<div className='w-3/5 rounded-lg overflow-hidden'>
 						<img
-							src={productToShow?.photo}
+							src={product.photo}
 							alt=''
 							className='w-full h-full object-cover'
 						/>
 					</div>
 					<span className='block w-px border'></span>
 					<div className='w-2/5 flex flex-col gap-5 justify-center'>
-						<h1 className='text-5xl font-bold'>{productToShow?.name}</h1>
-						<p className='text-4xl font-bold text-primary'>
-							{productToShow?.price} €
-						</p>
-						<p className='text-lg'>{productToShow?.description}</p>
-						<a
-							href={productToShow?.link}
-							target='_blank'
-							className='w-full mt-2'
-						>
+						<h1 className='text-5xl font-bold'>{product.name}</h1>
+						<p className='text-4xl font-bold text-primary'>{product.price} €</p>
+						<p className='text-lg'>{product.description}</p>
+						<a href={product.link} target='_blank' className='w-full mt-2'>
 							<Button
 								variant='default'
 								size='lg'
