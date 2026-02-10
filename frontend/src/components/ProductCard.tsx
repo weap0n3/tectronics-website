@@ -6,12 +6,12 @@ import { ArrowUpRightFromSquare } from 'lucide-react'
 import { MovingArrow } from './custom-ui/MovingArrow'
 import { ProductInfo } from './ProductInfo'
 
-interface ProductCardProps {
-	item: Product
+interface IProductCardProps {
+	item: IProduct
 	startPosition: string
 }
 
-export const ProductCard = ({ item, startPosition }: ProductCardProps) => {
+export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 	const { isVisible, isMoreInfoVisible, targetRef, setIsMoreInfoVisible } =
 		useProductCard()
 	return (
