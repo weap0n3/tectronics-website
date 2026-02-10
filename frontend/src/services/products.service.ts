@@ -1,22 +1,16 @@
-import { Product } from '@/types/product.interface'
+import { IProduct, IProductApi } from '@/types/product.interface'
 import axios from 'axios'
+import { ProductApiMapper } from './productApiMapper'
 
 export const ProductsService = {
-	async getProducts() {
+	async getProducts(): Promise<IProduct[]> {
 		try {
-			const response = await axios.get('/api/products', {
+			const response = await axios.get<IProductApi[]>('/api/products', {
 				headers: {
 					'Content-Type': 'application/json',
 				},
 			})
-			const products: Product[] = response.data.map(p => ({
-				id: Number(p.id),
-				name: p.name,
-				price: parseFloat(p.price), // convert string to number
-				photo: p.photo,
-				description: p.description,
-				link: p.link,
-			}))
+			const products: IProduct[] = response.data.map(ProductApiMapper)
 			return products
 		} catch (err) {
 			console.error('Error fetching products:', err)
