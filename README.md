@@ -1,6 +1,43 @@
-# Welcome to your Lovable project
+<div align="center">
+  <img src="frontend/public/Logo.png" alt="logo" width="200" height="auto" />
+  <h1>Welcome to Tectronics Website</h1>
+  
+  <p>
+    The official web presence for the <strong>Tectronics</strong> student project, a digital practice company from **HAK Zell am See, Austria**. 
+  </p>
+<!-- Badges -->
+<p>
+  <a href="https://github.com/weap0n3/tectronics-website/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/weap0n3/tectronics-website" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website" alt="last update" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website" alt="commit activity" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website" alt="commit activity" />
+  </a>
+	
+</p>
+   
+<h4>
+    <a href="https://github.com/weap0n3/tectronics-website/">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/weap0n3/tectronics-website">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/weap0n3/tectronics-website/issues/">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/weap0n3/tectronics-website/issues/">Request Feature</a>
+  </h4>
+</div>
+
+<br />
 
 ## Project info
+
+![Static Badge](https://img.shields.io/badge/testtest)
 
 **URL**: https://lovable.dev/projects/d807e3d8-c295-4762-b575-6cd2599da236
 
