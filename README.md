@@ -3,34 +3,25 @@
   <h1>Welcome to Tectronics Website</h1>
   
   <p>
-    The official web presence for the <strong>Tectronics</strong> student project, a digital practice company from **HAK Zell am See, Austria**. 
+    The official web presence for the <strong>Tectronics</strong> student project, a digital practice company from <strong>HAK Zell am See, Austria</strong>. 
   </p>
 <!-- Badges -->
 <p>
   <a href="https://github.com/weap0n3/tectronics-website/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/weap0n3/tectronics-website" alt="contributors" />
+    <img src="https://img.shields.io/github/contributors/weap0n3/tectronics-website?color=orange  " alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website?color=red" alt="last update" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website" alt="commit activity" />
+    <img src="https://img.shields.io/github/commit-activity/w/weap0n3/tectronics-website" alt="commit activity" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/weap0n3/tectronics-website" alt="commit activity" />
+    <img src="https://img.shields.io/badge/version-1.0.0-green" alt="stable version" />
   </a>
 	
 </p>
    
-<h4>
-    <a href="https://github.com/weap0n3/tectronics-website/">View Demo</a>
-  <span> · </span>
-    <a href="https://github.com/weap0n3/tectronics-website">Documentation</a>
-  <span> · </span>
-    <a href="https://github.com/weap0n3/tectronics-website/issues/">Report Bug</a>
-  <span> · </span>
-    <a href="https://github.com/weap0n3/tectronics-website/issues/">Request Feature</a>
-  </h4>
 </div>
 
 <br />
