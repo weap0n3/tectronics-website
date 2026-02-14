@@ -60,6 +60,33 @@ This project uses the following technologies:
 | **Tailwind CSS** | Utility-first CSS framework                           |
 | **PHP**          | Backend handling (e.g., server APIs, dynamic content) |
 
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://www.php.net/">PHP</a></li>
+    <li><a href="https://getcomposer.org/">Composer</a></li>
+  </ul>
+</details>
+
+<details>
+<summary>DevOps</summary>
+  <ul>
+    <li><a href="https://all-inkl.com/">Webftp All Inkl</a></li>
+    <li><a href="">phpMyAdmin</a></li>
+  </ul>
+</details>
+
 ## 📁 Features
 
 - Fully responsive, modern UI built with **React + Tailwind**
