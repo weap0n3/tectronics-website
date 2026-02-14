@@ -38,6 +38,16 @@ It offers:
 
 (_“Übungsfirma” indicates this is a student company — not a commercial business._)
 
+## :camera: Screenshots
+
+### Home Page
+
+![homePage](frontend/public/HomePage.png)
+
+### Product Page
+
+![productPage](frontend/public/ProductPage.png)
+
 ## 🚀 Stack & Technologies
 
 This project uses the following technologies:
