@@ -27,7 +27,9 @@ const Products = () => {
 							key={item.id}
 							item={item}
 							startPosition={
-								item.id % 2 == 0 ? 'translate-x-full' : '-translate-x-full'
+								item.id % 2 == 0
+									? 'lg:translate-x-full'
+									: 'lg:-translate-x-full'
 							}
 						/>
 					))}
