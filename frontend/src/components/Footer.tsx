@@ -6,7 +6,7 @@ const Footer = () => {
 	return (
 		<footer id='contact' className='bg-muted/30 border-t border-border py-12'>
 			<div className='container mx-auto px-4'>
-				<div className='grid md:grid-cols-4 gap-8 mb-8'>
+				<div className='grid md:grid-cols-3 gap-8 mb-8'>
 					<div>
 						<div className='flex items-center space-x-2 mb-4'>
 							<img src='/Logo.png' width={35} alt='' />
@@ -32,22 +32,6 @@ const Footer = () => {
 							</li>
 							<li>
 								<a
-									href='#services'
-									className='hover:text-foreground transition-colors'
-								>
-									Angebot
-								</a>
-							</li>
-							<li>
-								<a
-									href='#news'
-									className='hover:text-foreground transition-colors'
-								>
-									News
-								</a>
-							</li>
-							<li>
-								<a
 									href='#about'
 									className='hover:text-foreground transition-colors'
 								>
@@ -56,31 +40,6 @@ const Footer = () => {
 							</li>
 						</ul>
 					</div>
-
-					<div>
-						<h4 className='font-semibold mb-4 text-foreground'>
-							Geschäftsbereiche
-						</h4>
-						<ul className='space-y-2 text-sm text-muted-foreground'>
-							<li>
-								<a
-									href='#services'
-									className='hover:text-foreground transition-colors'
-								>
-									Game Garage
-								</a>
-							</li>
-							<li>
-								<a
-									href='#services'
-									className='hover:text-foreground transition-colors'
-								>
-									Cable-Corner
-								</a>
-							</li>
-						</ul>
-					</div>
-
 					<div>
 						<h4 className='font-semibold mb-4 text-foreground'>Kontakt</h4>
 						<ul className='space-y-3 text-sm text-muted-foreground'>
