@@ -14,7 +14,7 @@ export const useProductCard = () => {
 					setIsVisible(entry.isIntersecting)
 				})
 			},
-			{ root: null, threshold: 0, rootMargin: '0px 0px -25% 0px' },
+			{ root: null, threshold: 0, rootMargin: '0px 0px -10% 0px' },
 		)
 
 		if (targetRef.current) {

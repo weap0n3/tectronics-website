@@ -20,8 +20,8 @@ const Products = () => {
 	return (
 		<main>
 			<Navigation />
-			<section className='pt-20 pb-7 overflow-x-hidden'>
-				<div className='flex flex-col w-full items-center justify-center container'>
+			<section className='lg:pt-20 pt-14 pb-7 overflow-x-hidden'>
+				<div className='flex flex-col w-full items-center justify-center container lg:px-8 px-5'>
 					{products.map(item => (
 						<ProductCard
 							key={item.id}

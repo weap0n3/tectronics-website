@@ -20,23 +20,23 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 				ref={targetRef}
 				id={`product-card-${item.id}`}
 				className={clsx(
-					'flex rounded-lg m-4 p-0 overflow-hidden border duration-1000 ease-in-out',
+					'flex rounded-lg m-4 p-0 overflow-hidden border duration-1000 ease-in-out lg:flex-row flex-col w-full',
 					!isVisible && startPosition,
-					isVisible && 'opacity-100 translate-x-0',
+					isVisible && 'opacity-100 lg:translate-x-0',
 					!isVisible && 'opacity-0',
 				)}
 			>
-				<div className='w-[60%]'>
+				<div className='lg:w-[60%]'>
 					<img
 						src={item.photo}
 						className='h-full w-full object-cover'
 						alt='Product Image'
 					/>
 				</div>
-				<div className='bg-muted/30 px-11 py-3 flex flex-col justify-evenly w-[40%]'>
-					<h1 className='text-4xl'>{item.name}</h1>
+				<div className='lg:w-[40%] bg-muted/30 lg:px-10 px-3 py-2 pb-5 lg:pb-0 flex flex-col justify-evenly lg:gap-0 gap-4 lg:text-start text-center'>
+					<h1 className='lg:text-4xl text-3xl text-center'>{item.name}</h1>
 					<div className=''>
-						<p className='line-clamp-6' lang='10'>
+						<p className='lg:line-clamp-6 line-clamp-3 lg:text-base ' lang='10'>
 							{item.description}
 						</p>
 					</div>
@@ -48,7 +48,7 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 						<MovingArrow />
 						Mehr Details
 					</Button>
-					<div className='flex justify-between items-center'>
+					<div className='flex justify-between items-center flex-col lg:flex-row gap-4'>
 						<p className='text-4xl text-sky-500 font-bold'>
 							{item.price.toFixed(2)} €
 						</p>
