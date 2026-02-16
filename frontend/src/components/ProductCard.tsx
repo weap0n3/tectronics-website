@@ -33,10 +33,10 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 						alt='Product Image'
 					/>
 				</div>
-				<div className='lg:w-[40%] bg-muted/30 lg:px-10 px-3 py-2 pb-5 lg:pb-0 flex flex-col justify-evenly lg:gap-0 gap-4 lg:text-start text-center'>
-					<h1 className='lg:text-4xl text-3xl text-center'>{item.name}</h1>
+				<div className='lg:w-[40%] bg-muted/30 lg:px-10 px-3 py-5 lg:py-3 flex flex-col justify-evenly lg:gap-0 gap-4 lg:text-start text-center'>
+					<h1 className='lg:text-4xl text-2xl text-center'>{item.name}</h1>
 					<div className=''>
-						<p className='lg:line-clamp-6 line-clamp-3 lg:text-base ' lang='10'>
+						<p className='lg:line-clamp-6 line-clamp-3 lg:text-base' lang='10'>
 							{item.description}
 						</p>
 					</div>
@@ -49,7 +49,7 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 						Mehr Details
 					</Button>
 					<div className='flex justify-between items-center flex-col lg:flex-row gap-4'>
-						<p className='text-4xl text-sky-500 font-bold'>
+						<p className='text-3xl text-sky-500 font-bold'>
 							{item.price.toFixed(2)} €
 						</p>
 						<a href={item.link} target='_blank'>

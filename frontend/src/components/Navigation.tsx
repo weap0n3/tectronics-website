@@ -50,7 +50,7 @@ const Navigation = () => {
 
 				{/* Mobile Navigation */}
 				{isOpen && (
-					<div className='md:hidden pb-4 animate-slide-up'>
+					<div className='md:hidden pb-4 animate-fade-in'>
 						{navItems.map(item => (
 							<a
 								key={item.label}
