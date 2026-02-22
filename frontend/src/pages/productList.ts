@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
 	},
 	*/
 	{
-		id: 6,
+		id: 5,
 		name: 'Microsoft Office 365 Ultra halbjährlich',
 		price: 408.33,
 		photo: 'Office365Ultra.jpg',
@@ -62,7 +62,7 @@ export const PRODUCTS: Product[] = [
 		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 	{
-		id: 7,
+		id: 6,
 		name: 'Mauspad',
 		price: 27.49,
 		photo: 'GamingMousePad.jpg',
@@ -71,7 +71,7 @@ export const PRODUCTS: Product[] = [
 		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 	{
-		id: 8,
+		id: 7,
 		name: 'Gaming Tastatur',
 		price: 45.82,
 		photo: 'GamingKeyboard.jpg',
@@ -80,7 +80,7 @@ export const PRODUCTS: Product[] = [
 		link: 'https://marketplace.penworldwide.org/?enterprisePenCode=AT010002816',
 	},
 	{
-		id: 9,
+		id: 8,
 		name: 'Firewall (Cisco ASA5508-K9)',
 		price: 353.29,
 		photo: 'FirewallCisco.jpg',
