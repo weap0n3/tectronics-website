@@ -21,7 +21,7 @@ export const ProductInfo = ({
 
 	return (
 		<div className='fixed inset-0 bg-black/50 w-full h-full flex flex-col lg:flex-row items-center justify-center z-50 '>
-			<div className='bg-muted lg:pt-7 lg:pb-10 lg:px-11 m-8 p-4 rounded-lg lg:w-3/4 lg:overflow-y-hidden overflow-scroll lg:space-y-5 space-y-2'>
+			<div className='bg-muted lg:pt-7 lg:pb-10 lg:px-11 m-8 p-4 rounded-lg lg:w-3/4 lg:overflow-y-hidden overflow-y-scroll lg:space-y-5 space-y-2'>
 				<div className='w-full'>
 					<div className='lg:w-fit flex lg:block justify-center lg:justify-normal after:h-px after:bg-primary after:block after:transition-all after:duration-300 after:ease-in-out after:scale-x-0 hover:after:scale-x-100 after:origin-right '>
 						<button

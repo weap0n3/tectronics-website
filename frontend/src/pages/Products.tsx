@@ -9,6 +9,9 @@ const Products = () => {
 	const [products, setProducts] = useState<IProduct[]>(PRODUCTS)
 
 	useEffect(() => {
+		if (!window.location.hash) {
+			window.scrollTo(0, 0)
+		}
 		const fetchProducts = async () => {
 			const products = await ProductsService.getProducts()
 
