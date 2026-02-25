@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { HashLink } from 'react-router-hash-link'
 
 const Navigation = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -29,13 +30,14 @@ const Navigation = () => {
 					{/* Desktop Navigation */}
 					<div className='hidden md:flex items-center space-x-8'>
 						{navItems.map(item => (
-							<a
+							<HashLink
+								smooth
+								to={item.href}
 								key={item.label}
-								href={item.href}
 								className='text-muted-foreground hover:text-foreground transition-colors'
 							>
 								{item.label}
-							</a>
+							</HashLink>
 						))}
 					</div>
 
@@ -52,14 +54,15 @@ const Navigation = () => {
 				{isOpen && (
 					<div className='md:hidden pb-4 animate-fade-in'>
 						{navItems.map(item => (
-							<a
+							<HashLink
+								smooth
+								to={item.href}
 								key={item.label}
-								href={item.href}
 								className='block py-2 text-muted-foreground hover:text-foreground transition-colors'
 								onClick={() => setIsOpen(false)}
 							>
 								{item.label}
-							</a>
+							</HashLink>
 						))}
 					</div>
 				)}
