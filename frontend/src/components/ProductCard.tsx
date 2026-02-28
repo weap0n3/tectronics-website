@@ -49,9 +49,16 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 						Mehr Details
 					</Button>
 					<div className='flex justify-between items-center flex-col lg:flex-row gap-4'>
-						<p className='text-3xl text-sky-500 font-bold'>
-							{item.price.toFixed(2)} €
-						</p>
+						<div>
+							<p className='text-xl text-muted-foreground line-through'>
+								{item.discPrice ? item.price.toFixed(2) + ' €' : ''}
+							</p>
+							<p className='text-3xl text-sky-500 font-bold'>
+								{item.discPrice
+									? item.discPrice.toFixed(2) + ' €'
+									: item.price.toFixed(2) + ' €'}
+							</p>
+						</div>
 						<a href={item.link} target='_blank'>
 							<Button
 								variant='default'
