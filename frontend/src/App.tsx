@@ -12,6 +12,7 @@ const queryClient = new QueryClient()
 
 const App = () => (
 	<QueryClientProvider client={queryClient}>
+		{/*
 		<Snowfall
 			color='#fff'
 			style={{
@@ -19,6 +20,7 @@ const App = () => (
 				position: 'fixed',
 			}}
 		/>
+		*/}
 		<TooltipProvider>
 			<Toaster />
 			<Sonner />
