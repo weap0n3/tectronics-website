@@ -43,9 +43,16 @@ const Footer = () => {
 					<div>
 						<h4 className='font-semibold mb-4 text-foreground'>Kontakt</h4>
 						<ul className='space-y-3 text-sm text-muted-foreground'>
-							<li className='flex items-center gap-2'>
-								<MapPin className='w-4 h-4' />
-								<span>HAK Zell am See</span>
+							<li>
+								<a
+									target='_blank'
+									className='flex gap-2 items-center'
+									href='https://www.google.com/maps/place/Handelsakademie+und+Handelsschule+Zell+am+See/@47.3076132,12.795572,17z/data=!3m2!4b1!5s0x47771cea3a85e865:0x1f9907838f90f02c!4m6!3m5!1s0x47771cea30010761:0xce03e9de8f3a2b2c!8m2!3d47.3076096!4d12.7981469!16s%2Fg%2F1tdvnksq?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D'
+								>
+									{' '}
+									<MapPin className='w-4 h-4' />
+									<span>HAK Zell am See</span>
+								</a>
 							</li>
 							<li className='flex items-center gap-2'>
 								<Mail className='w-4 h-4' />
