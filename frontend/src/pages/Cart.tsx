@@ -7,12 +7,18 @@ const Cart = () => {
 		<main>
 			<Navigation />
 			<section className='mt-20 pb-7'>
-				<div className='flex flex-col w-full items-center justify-center container lg:px-8 px-5'>
-					<h1 className='text-3xl font-bold'>Your Shopping Cart</h1>
-					<div className='w-full space-y-4 mt-4 border border-gray-300 rounded-lg p-4 mb-4'>
-						{PRODUCTS.map(item => (
-							<CartItem key={item.id} item={item} />
-						))}
+				<div className='container'>
+					<h1 className='text-4xl font-bold mt-24 mb-10 w-full text-center'>
+						Your Shopping Cart
+					</h1>
+					<div className='flex flex-col lg:flex-row gap-6'>
+						<div className='flex-1'>
+							<div className='w-full border border-gray-300 rounded-lg p-2'>
+								{PRODUCTS.map(item => (
+									<CartItem key={item.id} item={item} />
+								))}
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
