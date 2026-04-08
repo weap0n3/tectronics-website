@@ -1,4 +1,6 @@
 import { CartItem } from '@/components/CartItem'
+import { CartSummary } from '@/components/CartSummary'
+import Footer from '@/components/Footer'
 import Navigation from '@/components/Navigation'
 import { PRODUCTS } from './productList'
 
@@ -19,9 +21,12 @@ const Cart = () => {
 								))}
 							</div>
 						</div>
+
+						<CartSummary />
 					</div>
 				</div>
 			</section>
+			<Footer />
 		</main>
 	)
 }
