@@ -1,5 +1,6 @@
+import { Clicker } from '@/components/custom-ui/Clicker'
 import { Button } from '@/components/ui/button'
-import { Clicker } from '@/components/ui/Clicker'
+import { IProduct } from '@/types/product.interface'
 import { X } from 'lucide-react'
 
 export const CartItem = ({ item }: { item: IProduct }) => {
