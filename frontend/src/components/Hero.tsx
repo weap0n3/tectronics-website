@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button.tsx'
 import { ArrowRight, BriefcaseBusiness } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
 	return (
@@ -35,7 +36,7 @@ const Hero = () => {
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
-						<a href='/products'>
+						<Link to='/products'>
 							<Button
 								size='lg'
 								className='bg-gradient-primary shadow-glow hover:shadow-glow hover:scale-105 transition-all'
@@ -43,7 +44,7 @@ const Hero = () => {
 								Entdecke unsere Services
 								<ArrowRight className='ml-2 w-5 h-5' />
 							</Button>
-						</a>
+						</Link>
 						<a href='#about'>
 							<Button
 								size='lg'
