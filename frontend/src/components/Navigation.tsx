@@ -12,6 +12,7 @@ const Navigation = () => {
 		{ label: 'Produkte', href: '/products' },
 		{ label: 'Über uns', href: '/#about' },
 		{ label: 'Kontakt', href: '#contact' },
+		{ label: 'Cart', href: '/cart' },
 	]
 
 	return (
