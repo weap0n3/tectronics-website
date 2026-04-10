@@ -7,15 +7,14 @@ import { useCartStore } from '@/store/useCartStore'
 const Cart = () => {
 	const cart = useCartStore(state => state.cart)
 
-	console.log(cart.length)
 	return (
-		<main>
+		<main className='min-h-screen flex flex-col'>
 			<Navigation />
-			<section className='mt-20 pb-7'>
-				<div className='container'>
+			<section className='flex-1 mt-20 pb-7'>
+				<div className='container h-full'>
 					{cart.length == 0 ? (
-						<div className=' items-center'>
-							<h1 className='text-4xl font-bold mt-24 mb-10 w-full text-center'>
+						<div className='items-center h-full'>
+							<h1 className='text-4xl font-bold w-full text-center h-full'>
 								The Cart is Empty
 							</h1>
 						</div>
