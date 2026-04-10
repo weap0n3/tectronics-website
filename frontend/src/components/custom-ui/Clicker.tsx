@@ -1,30 +1,36 @@
 import { Button } from '@/components/ui/button'
-import React, { useState } from 'react'
+import { useCartStore } from '@/store/useCartStore'
+import { IProduct } from '@/types/product.interface'
+import React from 'react'
 
-export const Clicker = React.memo(() => {
-	const [quantity, setQuantity] = useState(1)
+export const Clicker = React.memo(({ item }: { item: IProduct }) => {
+	const cart = useCartStore(state => state)
 
-	const handlePlusClick = () => {
-		setQuantity(quantity + 1)
-	}
-
-	const handleMinusClick = () => {
-		setQuantity(quantity > 1 ? quantity - 1 : quantity)
-	}
+	const startQuantity = cart.cart.find(i => i.id === item.id).quantity
 
 	return (
 		<div className='flex items-center space-x-2 w-full justify-center'>
-			<Button variant='outline' onClick={handleMinusClick}>
+			<Button
+				variant='outline'
+				onClick={() => {
+					cart.removeCartItem(item)
+				}}
+			>
 				-
 			</Button>
 			<input
 				type='number'
-				value={quantity}
-				onChange={e => setQuantity(parseInt(e.target.value) || 1)}
+				value={startQuantity}
+				onChange={e => cart.addCartItem(item, parseInt(e.target.value) || 1)}
 				min='1'
 				className='bg-transparent w-12 text-center rounded-sm p-[6px] focus:border focus:border-accent  focus:outline-none'
 			/>
-			<Button variant='outline' onClick={handlePlusClick}>
+			<Button
+				variant='outline'
+				onClick={() => {
+					cart.addCartItem(item)
+				}}
+			>
 				+
 			</Button>
 		</div>
