@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button.tsx'
 import { useProductCard } from '@/hooks/useProductCard'
+import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'
@@ -14,13 +15,15 @@ interface IProductCardProps {
 export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 	const { isVisible, isMoreInfoVisible, targetRef, setIsMoreInfoVisible } =
 		useProductCard()
+	const addCartItem = useCartStore(state => state.addCartItem)
+
 	return (
 		<>
 			<div
 				ref={targetRef}
 				id={`product-card-${item.id}`}
 				className={clsx(
-					'flex rounded-lg m-4 p-0 overflow-hidden border duration-1000 ease-in-out lg:flex-row flex-col w-full',
+					'flex rounded-lg m-4 p-0 overflow-hidden border duration-1000 ease-in-out lg:flex-row flex-col w-full max-h-[535px]',
 					!isVisible && startPosition,
 					isVisible && 'opacity-100 lg:translate-x-0',
 					!isVisible && 'opacity-0',
@@ -59,16 +62,17 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 									: item.price.toFixed(2) + ' €'}
 							</p>
 						</div>
-						<a href={item.link} target='_blank'>
-							<Button
-								variant='default'
-								size='lg'
-								className='text-lg hover:bg-primary/80 hover:scale-105 transition-all duration-300 ease-in-out'
-							>
-								Marketplace
-								<ArrowUpRightFromSquare size={18} className='ml-2' />
-							</Button>
-						</a>
+						<Button
+							onClick={() => {
+								addCartItem(item)
+							}}
+							variant='default'
+							size='lg'
+							className='text-lg hover:bg-primary/80 hover:scale-105 transition-all duration-300 ease-in-out'
+						>
+							Add to Cart
+							<ArrowUpRightFromSquare size={18} className='ml-2' />
+						</Button>
 					</div>
 				</div>
 			</div>

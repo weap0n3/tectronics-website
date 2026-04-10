@@ -1,9 +1,12 @@
 import { Clicker } from '@/components/custom-ui/Clicker'
 import { Button } from '@/components/ui/button'
+import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
 import { X } from 'lucide-react'
 
 export const CartItem = ({ item }: { item: IProduct }) => {
+	const removeCartItem = useCartStore(state => state.removeCartItem)
+
 	return (
 		<div
 			key={item.id}
@@ -15,11 +18,15 @@ export const CartItem = ({ item }: { item: IProduct }) => {
 				<p className='line-clamp-3'>{item.description}</p>
 			</div>
 			<p className='text-2xl text-primary text-center'>
-				${item.price.toFixed(2)}
+				€ {item.price.toFixed(2)}
 			</p>
-			<Clicker />
+			<Clicker item={item} />
 			<div className='w-full flex justify-center'>
-				<Button variant='destructive' className='p-3 rounded-full'>
+				<Button
+					variant='destructive'
+					className='p-3 rounded-full'
+					onClick={() => removeCartItem(item, 1)}
+				>
 					<X />
 				</Button>
 			</div>
