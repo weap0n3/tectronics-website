@@ -6,11 +6,7 @@ import { Button } from './ui/button'
 export const CartSummary = () => {
 	// TODO: Calculate total price (Product price * quantity)
 
-	const cartItems = useCartStore(state => state.cart)
-
-	const total = cartItems.reduce((sum, item) => {
-		return sum + item.price * 1
-	}, 0)
+	const getTotalPrice = useCartStore(state => state.getTotalPrice)
 
 	return (
 		<div className='w-full lg:w-1/3 border border-gray-300  rounded-lg p-4 h-fit sticky top-20'>
@@ -20,7 +16,7 @@ export const CartSummary = () => {
 
 			<div className='flex justify-between font-bold text-lg'>
 				<span>Gesamt</span>
-				<span>€ {total.toFixed(2)}</span>
+				<span>€ {getTotalPrice().toFixed(2)}</span>
 			</div>
 
 			<div className='mt-4 text-sm text-yellow-900 bg-orange-300 border border-orange-950 rounded-lg p-3 text-center'>

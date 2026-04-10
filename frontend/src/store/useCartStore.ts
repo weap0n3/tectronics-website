@@ -9,6 +9,7 @@ interface IUseCartStore {
 	cart: ICartItem[]
 	addCartItem: (product: IProduct, amount?: number) => void
 	removeCartItem: (product: IProduct, amount?: number) => void
+	getTotalPrice: () => number
 }
 
 export const useCartStore = create<IUseCartStore>((set, get) => ({
@@ -47,4 +48,6 @@ export const useCartStore = create<IUseCartStore>((set, get) => ({
 				}
 			}
 		}),
+	getTotalPrice: () =>
+		get().cart.reduce((total, i) => total + i.quantity * i.price, 0),
 }))
