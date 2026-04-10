@@ -6,7 +6,7 @@ import { IProduct } from '@/types/product.interface.ts'
 import { useEffect, useState } from 'react'
 import { PRODUCTS } from './productList.ts'
 const Products = () => {
-	const [products, setProducts] = useState<IProduct[]>(PRODUCTS)
+	const [products, setProducts] = useState<IProduct[]>([])
 
 	useEffect(() => {
 		if (!window.location.hash) {

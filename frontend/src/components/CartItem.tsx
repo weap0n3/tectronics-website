@@ -4,7 +4,11 @@ import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
 import { X } from 'lucide-react'
 
-export const CartItem = ({ item }: { item: IProduct }) => {
+type TCartItemProps = {
+	item: IProduct
+}
+
+export const CartItem = ({ item }: TCartItemProps) => {
 	const removeCartItem = useCartStore(state => state.removeCartItem)
 
 	return (
