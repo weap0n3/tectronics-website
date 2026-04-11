@@ -34,10 +34,11 @@ export const useCartStore = create<IUseCartStore>()(
 						}
 					}
 				}),
-			removeCartItem: (product, amount) =>
-				set(state => {
-					const existingItem = state.cart.find(i => i.id === product.id)
-					if (existingItem && existingItem.quantity > 1 && amount != 1) {
+			removeCartItem: product =>
+				set(state => ({
+					cart: state.cart.filter(i => i.id !== product.id),
+				})),
+			if (existingItem && existingItem.quantity > 1 && amount != 1) {
 						return {
 							cart: state.cart.map(item =>
 								item.id === product.id

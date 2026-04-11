@@ -1,7 +1,7 @@
-import { Clicker } from '@/components/custom-ui/Clicker'
-import { Button } from '@/components/ui/button'
-import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
+import { Clicker } from '@components/custom-ui/Clicker'
+import { Button } from '@components/ui/button'
+import { useCartStore } from '@store/useCartStore'
 import { X } from 'lucide-react'
 
 type TCartItemProps = {
@@ -29,7 +29,7 @@ export const CartItem = ({ item }: TCartItemProps) => {
 				<Button
 					variant='destructive'
 					className='p-3 rounded-full'
-					onClick={() => removeCartItem(item, 1)}
+					onClick={() => removeCartItem(item)}
 				>
 					<X />
 				</Button>
