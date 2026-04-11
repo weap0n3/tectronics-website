@@ -13,7 +13,7 @@ export const Clicker = React.memo(({ item }: { item: IProduct }) => {
 			<Button
 				variant='outline'
 				onClick={() => {
-					cart.removeCartItem(item)
+					cart.decreaseCartItem(item)
 				}}
 			>
 				-

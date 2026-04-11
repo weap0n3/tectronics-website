@@ -9,8 +9,13 @@ interface ICartItem extends IProduct {
 interface IUseCartStore {
 	cart: ICartItem[]
 	addCartItem: (product: IProduct, amount?: number) => void
-	removeCartItem: (product: IProduct, amount?: number) => void
+	removeCartItem: (product: IProduct) => void
+	decreaseCartItem: (product: IProduct) => void
 	getTotalPrice: () => number
+}
+
+const findExistingItem = (cart: ICartItem[], product: IProduct) => {
+	return cart.find(i => i.id === product.id)
 }
 
 export const useCartStore = create<IUseCartStore>()(
@@ -19,7 +24,7 @@ export const useCartStore = create<IUseCartStore>()(
 			cart: [],
 			addCartItem: (product, amount) =>
 				set(state => {
-					const existingItem = state.cart.find(i => i.id === product.id)
+					const existingItem = findExistingItem(state.cart, product)
 					if (existingItem) {
 						return {
 							cart: state.cart.map(i =>
@@ -38,20 +43,17 @@ export const useCartStore = create<IUseCartStore>()(
 				set(state => ({
 					cart: state.cart.filter(i => i.id !== product.id),
 				})),
-			if (existingItem && existingItem.quantity > 1 && amount != 1) {
-						return {
-							cart: state.cart.map(item =>
-								item.id === product.id
-									? { ...item, quantity: item.quantity - 1 }
-									: item,
-							),
-						}
-					} else {
-						return {
-							cart: state.cart.filter(item => item.id !== product.id),
-						}
-					}
-				}),
+			decreaseCartItem: product =>
+				set(state => ({
+					cart: state.cart.map(item =>
+						item.id === product.id
+							? {
+									...item,
+									quantity: item.quantity === 1 ? 1 : item.quantity - 1,
+								}
+							: item,
+					),
+				})),
 			getTotalPrice: () =>
 				get().cart.reduce((total, i) => total + i.quantity * i.price, 0),
 		}),
