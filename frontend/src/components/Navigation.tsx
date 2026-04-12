@@ -2,7 +2,7 @@ import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
-const Navigation = () => {
+const Navigation = memo(() => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const navItems = [
@@ -70,6 +70,6 @@ const Navigation = () => {
 			</div>
 		</nav>
 	)
-}
+})
 
 export default Navigation

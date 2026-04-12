@@ -1,14 +1,15 @@
+import { Clicker } from '@/components/custom-ui/Clicker'
+import { Button } from '@/components/ui/button'
+import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
-import { Clicker } from '@components/custom-ui/Clicker'
-import { Button } from '@components/ui/button'
-import { useCartStore } from '@store/useCartStore'
 import { X } from 'lucide-react'
+import React from 'react'
 
 type TCartItemProps = {
 	item: IProduct
 }
 
-export const CartItem = ({ item }: TCartItemProps) => {
+export const CartItem = React.memo(({ item }: TCartItemProps) => {
 	const removeCartItem = useCartStore(state => state.removeCartItem)
 
 	return (
@@ -36,4 +37,4 @@ export const CartItem = ({ item }: TCartItemProps) => {
 			</div>
 		</div>
 	)
-}
+})
