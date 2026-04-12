@@ -1,38 +1,32 @@
 import { Button } from '@/components/ui/button'
 import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
-import React from 'react'
 
-export const Clicker = React.memo(({ item }: { item: IProduct }) => {
-	const cart = useCartStore(state => state)
+export const Clicker = ({ item }: { item: IProduct }) => {
+	const quantity = useCartStore(
+		state => state.cart.find(i => i.id === item.id)?.quantity ?? 0,
+	)
 
-	const startQuantity = cart.cart.find(i => i.id === item.id).quantity
+	const increase = useCartStore(state => state.addCartItem)
+	const decrease = useCartStore(state => state.decreaseCartItem)
 
 	return (
 		<div className='flex items-center space-x-2 w-full justify-center'>
-			<Button
-				variant='outline'
-				onClick={() => {
-					cart.decreaseCartItem(item)
-				}}
-			>
+			<Button variant='outline' onClick={() => decrease(item)}>
 				-
 			</Button>
+
 			<input
 				type='number'
-				value={startQuantity}
-				onChange={e => cart.addCartItem(item, parseInt(e.target.value) || 1)}
+				value={quantity}
+				onChange={e => increase(item, parseInt(e.target.value) || 1)}
 				min='1'
-				className='bg-transparent w-12 text-center rounded-sm p-[6px] focus:border focus:border-accent  focus:outline-none'
+				className='bg-transparent w-12 text-center rounded-sm p-[6px] focus:border focus:border-accent focus:outline-none'
 			/>
-			<Button
-				variant='outline'
-				onClick={() => {
-					cart.addCartItem(item)
-				}}
-			>
+
+			<Button variant='outline' onClick={() => increase(item)}>
 				+
 			</Button>
 		</div>
 	)
-})
+}
