@@ -8,13 +8,15 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
-			"@components/*": ["./src/components/*"],
-			"@services/*": ["./src/services/*"],
-			"@types/*": ["./src/types/*"],
-			"@utils/*": ["./src/utils/*"],
-			"@pages/*": ["./src/pages/*"],
-			"@hooks/*": ["./src/hooks/*"],
-			"@store/*": ["./src/store/*"]
+			"@/components/*": ["./src/components/*"],
+			"@/services/*": ["./src/services/*"],
+			"@/types/*": ["./src/types/*"],
+			"@/utils/*": ["./src/utils/*"],
+			"@/pages/*": ["./src/pages/*"],
+			"@/hooks/*": ["./src/hooks/*"],
+			"@/store/*": ["./src/store/*"],
+			"@/config/*": ["./src/config/*"],
+			"@/constants/*": ["./src/constants/*"]
 		},
 		"noImplicitAny": false,
 		"noUnusedParameters": false,
