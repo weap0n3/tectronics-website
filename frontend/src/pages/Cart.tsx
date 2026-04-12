@@ -1,21 +1,24 @@
-import { CartItem } from '@components/CartItem'
-import { CartSummary } from '@components/CartSummary'
-import Footer from '@components/Footer'
-import Navigation from '@components/Navigation'
-import { useCartStore } from '@store/useCartStore'
+import { CartItem } from '@/components/CartItem'
+import { CartSummary } from '@/components/CartSummary'
+import Footer from '@/components/Footer'
+import Navigation from '@/components/Navigation'
+import { useCartStore } from '@/store/useCartStore'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const Cart = () => {
 	const cart = useCartStore(state => state.cart)
 
-	const { pathname } = useLocation()
+	const { hash } = useLocation()
 
 	useEffect(() => {
-		if (!window.location.hash) {
-			window.scrollTo(0, 0)
-		}
-	}, [pathname])
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}, [hash])
+
+	console.log('Cart rendered')
 
 	return (
 		<main className='min-h-screen flex flex-col'>
@@ -25,7 +28,7 @@ const Cart = () => {
 					<h1 className='text-4xl font-bold text-center'>The Cart is Empty</h1>
 				</div>
 			) : (
-				<section className='flex-1 mt-24 pb-7'>
+				<section className='flex-1 mt-24 pb-7 animate-fade-in'>
 					<div className='container '>
 						<h1 className='text-4xl font-bold mb-10 w-full text-center'>
 							Your Shopping Cart

@@ -4,14 +4,21 @@ import { ProductCard } from '@/components/ProductCard.tsx'
 import { ProductsService } from '@/services/products.service.ts'
 import { IProduct } from '@/types/product.interface.ts'
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { PRODUCTS } from './productList.ts'
 const Products = () => {
 	const [products, setProducts] = useState<IProduct[]>([])
 
+	const { hash } = useLocation()
+
 	useEffect(() => {
-		if (!window.location.hash) {
-			window.scrollTo(0, 0)
-		}
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}, [hash])
+
+	useEffect(() => {
 		const fetchProducts = async () => {
 			const products = await ProductsService.getProducts()
 
