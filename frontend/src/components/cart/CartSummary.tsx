@@ -1,7 +1,7 @@
+import { Button } from '@/components/ui/button'
 import { useCartStore } from '@/store/useCartStore'
 import { MessageSquareWarningIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from './ui/button'
 
 export const CartSummary = () => {
 	// TODO: Calculate total price (Product price * quantity)

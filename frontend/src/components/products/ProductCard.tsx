@@ -1,10 +1,11 @@
+import { useProductCard } from '@/components/products/useProductCard'
 import { Button } from '@/components/ui/button.tsx'
-import { useProductCard } from '@/hooks/useProductCard'
 import { useCartStore } from '@/store/useCartStore'
 import { IProduct } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'
-import { MovingArrow } from './custom-ui/MovingArrow'
+import { toast } from 'sonner'
+import { MovingArrow } from '../custom-ui/MovingArrow'
 import { ProductInfo } from './ProductInfo'
 
 interface IProductCardProps {
@@ -64,6 +65,7 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 						</div>
 						<Button
 							onClick={() => {
+								toast.success('Product added to cart!')
 								addCartItem(item)
 							}}
 							variant='default'

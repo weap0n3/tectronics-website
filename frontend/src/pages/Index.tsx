@@ -1,7 +1,7 @@
-import About from '@/components/About'
-import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
-import Navigation from '@/components/Navigation'
+import About from '@/components/about/About'
+import Hero from '@/components/welcome-screen/Hero'
+import Footer from '@/components/footer/Footer'
+import Navigation from '@/components/navigation/Navigation'
 
 const Index = () => {
 	return (
