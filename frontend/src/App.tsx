@@ -3,6 +3,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 import Cart from '@/pages/Cart'
 import Index from '@/pages/Index'
 import NotFound from '@/pages/NotFound'
+import CustomerForm from '@/pages/OrderForm'
 import Products from '@/pages/ProductPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -27,6 +28,7 @@ const App = () => (
 					<Route path='/' element={<Index />} />
 					<Route path='/products' element={<Products />} />
 					<Route path='/cart' element={<Cart />} />
+					<Route path='/order' element={<CustomerForm />} />
 
 					{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
 					<Route path='*' element={<NotFound />} />
