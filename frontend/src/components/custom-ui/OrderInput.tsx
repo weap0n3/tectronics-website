@@ -5,15 +5,21 @@ export type IInputData = {
 	register: UseFormRegister<IFormData>
 	placeholder: string
 	regName: keyof IFormData
+	rules?: object
 }
 
-export const OrderInput = ({ register, regName, placeholder }: IInputData) => {
+export const OrderInput = ({
+	register,
+	regName,
+	placeholder,
+	rules,
+}: IInputData) => {
 	return (
 		<div className='flex gap-1 p-1 rounded-xl shadow-md'>
 			<div className='w-full relative'>
 				<input
 					className='w-full p-3 rounded-lg bg-secondary text-white border-2 border-transparent outline-none transition-all duration-200 ease-in-out shadow-input-default focus:border-primary focus:border-2 focus:shadow-input-focus text-lg peer input'
-					{...register(regName)}
+					{...register(regName, rules)}
 				/>
 				<label
 					htmlFor={regName}

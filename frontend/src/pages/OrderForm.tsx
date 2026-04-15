@@ -6,17 +6,55 @@ import { IFormData } from '@/types/order.interface'
 import { useForm } from 'react-hook-form'
 
 const CustomerForm = () => {
-	const { register, handleSubmit } = useForm<IFormData>()
+	const { register, handleSubmit, formState } = useForm<IFormData>({
+		mode: 'onChange',
+	})
 
 	const inputData: IInputData[] = [
-		{ register, regName: 'name', placeholder: 'Name' },
-		{ register, regName: 'ust', placeholder: 'USt-Nummer' },
-		{ register, regName: 'kontaktperson', placeholder: 'Kontaktperson' },
-		{ register, regName: 'email', placeholder: 'E-Mail' },
-		{ register, regName: 'address', placeholder: 'Adresse' },
-		{ register, regName: 'ort', placeholder: 'Ort' },
-		{ register, regName: 'plz', placeholder: 'PLZ' },
-		{ register, regName: 'land', placeholder: 'Land' },
+		{
+			register,
+			regName: 'name',
+			placeholder: 'Name',
+			rules: {
+				required: 'Name ist erforderlich',
+				minLength: {
+					value: 3,
+					message: 'Name muss mindestens 3 Zeichen lang sein',
+				},
+				maxLength: {
+					value: 50,
+					message: 'Name darf maximal 50 Zeichen lang sein',
+				},
+				pattern: {
+					value: /^[a-zA-Z\s]+$/,
+					message: 'Name darf nur Buchstaben und Leerzeichen enthalten',
+				},
+			},
+		},
+		{
+			register,
+			regName: 'ust',
+			placeholder: 'USt-Nummer',
+			rules: { required: 'USt-Nummer ist erforderlich' },
+		},
+		{
+			register,
+			regName: 'kontaktperson',
+			placeholder: 'Kontaktperson',
+			rules: { required: 'Kontaktperson ist erforderlich' },
+		},
+		{
+			register,
+			regName: 'email',
+			placeholder: 'E-Mail',
+			rules: { required: 'E-Mail ist erforderlich' },
+		},
+		{
+			register,
+			regName: 'address',
+			placeholder: 'Adresse',
+			rules: { required: 'Adresse ist erforderlich' },
+		},
 	]
 
 	return (
@@ -33,11 +71,33 @@ const CustomerForm = () => {
 						onSubmit={handleSubmit(data =>
 							console.log('Form submitted with:', data),
 						)}
-						className='border border-gray-300 rounded-lg p-6 space-y-5'
+						className='border border-gray-300 rounded-lg p-6 py-7 space-y-5'
 					>
 						{inputData.map((input, index) => (
-							<OrderInput key={index} {...input} />
+							<div key={index}>
+								<OrderInput
+									register={input.register}
+									regName={input.regName}
+									rules={input.rules}
+									placeholder={input.placeholder}
+								/>
+								{formState.errors[input.regName]?.message && (
+									<p className='text-red-500 text-sm mt-1'>
+										{formState.errors[input.regName].message}
+									</p>
+								)}
+							</div>
 						))}
+
+						<div className='grid grid-cols-1 md:grid-cols-3 gap-4 '>
+							<OrderInput register={register} regName='ort' placeholder='Ort' />
+							<OrderInput register={register} regName='plz' placeholder='PLZ' />
+							<OrderInput
+								register={register}
+								regName='land'
+								placeholder='Land'
+							/>
+						</div>
 						<Button className='w-full' type='submit'>
 							Bestellen
 						</Button>
