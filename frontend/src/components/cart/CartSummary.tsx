@@ -39,8 +39,9 @@ export const CartSummary = () => {
 			</div>
 
 			<hr className='mt-6' />
-
-			<Button className='w-full mt-6'>Zur Kasse</Button>
+			<Link to='/order'>
+				<Button className='w-full mt-6'>Zur Kasse</Button>
+			</Link>
 			<Link to='/products'>
 				<Button variant='link' className='w-full mt-3'>
 					Weiter einkaufen

@@ -18,8 +18,6 @@ const Cart = () => {
 		})
 	}, [hash])
 
-	console.log('Cart rendered')
-
 	return (
 		<main className='min-h-screen flex flex-col'>
 			<Navigation />
