@@ -6,7 +6,7 @@ import { IFormData } from '@/types/order.interface'
 import { useForm } from 'react-hook-form'
 
 const CustomerForm = () => {
-	const { register, handleSubmit, formState } = useForm<IFormData>({
+	const { register, handleSubmit, formState, watch } = useForm<IFormData>({
 		mode: 'onChange',
 	})
 
@@ -41,13 +41,34 @@ const CustomerForm = () => {
 			register,
 			regName: 'kontaktperson',
 			placeholder: 'Kontaktperson',
-			rules: { required: 'Kontaktperson ist erforderlich' },
+			rules: {
+				required: 'Kontaktperson ist erforderlich',
+				minLength: {
+					value: 3,
+					message: 'Kontaktperson muss mindestens 3 Zeichen lang sein',
+				},
+				maxLength: {
+					value: 50,
+					message: 'Kontaktperson darf maximal 50 Zeichen lang sein',
+				},
+				pattern: {
+					value: /^[a-zA-Z\s]+$/,
+					message:
+						'Kontaktperson darf nur Buchstaben und Leerzeichen enthalten',
+				},
+			},
 		},
 		{
 			register,
 			regName: 'email',
 			placeholder: 'E-Mail',
-			rules: { required: 'E-Mail ist erforderlich' },
+			rules: {
+				required: 'E-Mail ist erforderlich',
+				pattern: {
+					value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+					message: 'E-Mail ist nicht gültig',
+				},
+			},
 		},
 		{
 			register,
@@ -80,6 +101,7 @@ const CustomerForm = () => {
 									regName={input.regName}
 									rules={input.rules}
 									placeholder={input.placeholder}
+									watch={watch(input.regName)}
 								/>
 								{formState.errors[input.regName]?.message && (
 									<p className='text-red-500 text-sm mt-1'>
@@ -90,12 +112,23 @@ const CustomerForm = () => {
 						))}
 
 						<div className='grid grid-cols-1 md:grid-cols-3 gap-4 '>
-							<OrderInput register={register} regName='ort' placeholder='Ort' />
-							<OrderInput register={register} regName='plz' placeholder='PLZ' />
+							<OrderInput
+								register={register}
+								regName='ort'
+								placeholder='Ort'
+								watch={watch('ort')}
+							/>
+							<OrderInput
+								register={register}
+								regName='plz'
+								placeholder='PLZ'
+								watch={watch('plz')}
+							/>
 							<OrderInput
 								register={register}
 								regName='land'
 								placeholder='Land'
+								watch={watch('land')}
 							/>
 						</div>
 						<Button className='w-full' type='submit'>
