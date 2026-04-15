@@ -99,6 +99,10 @@ export default {
 			boxShadow: {
 				glow: 'var(--shadow-glow)',
 				card: 'var(--shadow-card)',
+				'input-default':
+					'inset 4px 4px 10px #0e1013, inset -5px -5px 10px #383e4b, 0 0 100px rgba(255,212,59,0), 0 0 100px rgba(255,102,0,0)',
+				'input-focus':
+					'inset 0 0 10px rgba(0,96,128,0.4), inset 0 0 15px rgba(0,96,128,0.6), 0 0 80px rgba(0,96,128,0.4), 0 0 120px rgba(0,96,128,0.6)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
