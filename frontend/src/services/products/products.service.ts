@@ -6,7 +6,7 @@ import { ProductApiMapper } from './productApiMapper'
 export const ProductsService = {
 	async getProducts(): Promise<IProduct[]> {
 		try {
-			const response = await axios.get<IProductApi[]>(API_ROUTES.PRODUCTS, {
+			const response = await axios.get<IProductApi[]>(API_ROUTES.GET_PRODUCTS, {
 				headers: {
 					'Content-Type': 'application/json',
 				},

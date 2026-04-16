@@ -7,5 +7,6 @@ export const ROUTES = {
 }
 
 export const API_ROUTES = {
-	PRODUCTS: '/api/products',
+	GET_PRODUCTS: '/api/getProducts',
+	ADD_ORDER: '/api/addOrder',
 }
