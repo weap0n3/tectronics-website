@@ -2,6 +2,7 @@ import { IInputData, OrderInput } from '@/components/custom-ui/OrderInput'
 import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
 import { Button } from '@/components/ui/button'
+import { INPUT_FIRM_DATA, INPUT_PERSON_DATA } from '@/config/inputs.config'
 import { IFormData } from '@/types/order.interface'
 import { useForm } from 'react-hook-form'
 
@@ -10,73 +11,6 @@ const CustomerForm = () => {
 		mode: 'onChange',
 	})
 
-	const inputData: IInputData[] = [
-		{
-			register,
-			regName: 'name',
-			placeholder: 'Name',
-			rules: {
-				required: 'Name ist erforderlich',
-				minLength: {
-					value: 3,
-					message: 'Name muss mindestens 3 Zeichen lang sein',
-				},
-				maxLength: {
-					value: 50,
-					message: 'Name darf maximal 50 Zeichen lang sein',
-				},
-				pattern: {
-					value: /^[a-zA-Z\s]+$/,
-					message: 'Name darf nur Buchstaben und Leerzeichen enthalten',
-				},
-			},
-		},
-		{
-			register,
-			regName: 'ust',
-			placeholder: 'USt-Nummer',
-			rules: { required: 'USt-Nummer ist erforderlich' },
-		},
-		{
-			register,
-			regName: 'kontaktperson',
-			placeholder: 'Kontaktperson',
-			rules: {
-				required: 'Kontaktperson ist erforderlich',
-				minLength: {
-					value: 3,
-					message: 'Kontaktperson muss mindestens 3 Zeichen lang sein',
-				},
-				maxLength: {
-					value: 50,
-					message: 'Kontaktperson darf maximal 50 Zeichen lang sein',
-				},
-				pattern: {
-					value: /^[a-zA-Z\s]+$/,
-					message:
-						'Kontaktperson darf nur Buchstaben und Leerzeichen enthalten',
-				},
-			},
-		},
-		{
-			register,
-			regName: 'email',
-			placeholder: 'E-Mail',
-			rules: {
-				required: 'E-Mail ist erforderlich',
-				pattern: {
-					value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-					message: 'E-Mail ist nicht gültig',
-				},
-			},
-		},
-		{
-			register,
-			regName: 'address',
-			placeholder: 'Adresse',
-			rules: { required: 'Adresse ist erforderlich' },
-		},
-	]
 
 	return (
 		<main className='min-h-screen flex flex-col'>
