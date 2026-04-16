@@ -1,4 +1,4 @@
-import { IInputData, OrderInput } from '@/components/custom-ui/OrderInput'
+import { OrderInput } from '@/components/custom-ui/OrderInput'
 import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
 import { Button } from '@/components/ui/button'
@@ -29,6 +29,7 @@ const CustomerForm = () => {
 					<h1 className='text-4xl font-bold mb-10 text-center'>
 						Bestellformular
 					</h1>
+
 					<div className='relative flex mb-6 bg-muted p-1 rounded-xl w-full justify-center items-center max-w-lg mx-auto'>
 						{/* Sliding background */}
 						<div
