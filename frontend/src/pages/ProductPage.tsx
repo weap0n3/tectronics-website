@@ -2,7 +2,7 @@ import { LoadingScreen } from '@/components/custom-ui/LoadingScreen'
 import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
 import { Products } from '@/components/products/Products'
-import { ProductsService } from '@/services/products.service.ts'
+import { ProductsService } from '@/services/products/products.service'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -30,7 +30,11 @@ const ProductPage = () => {
 			<Navigation />
 
 			<section className='lg:pt-20 pt-14 pb-7 overflow-x-hidden flex-1 min-h-screen flex justify-center items-center'>
-				{data ? <Products data={data} /> : <p>No products found.</p>}
+				{data.length != 0 ? (
+					<Products data={data} />
+				) : (
+					<p>No products found.</p>
+				)}
 			</section>
 
 			<Footer />
