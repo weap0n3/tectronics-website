@@ -117,21 +117,46 @@ const CustomerForm = () => {
 								regName='ort'
 								placeholder='Ort'
 								watch={watch('ort')}
+								rules={{
+									required: 'Ort ist erforderlich',
+									minLength: { value: 2, message: 'Ort zu kurz' },
+									pattern: {
+										value: /^[\p{L}\s]+$/u,
+										message:
+											'Ort darf nur Buchstaben und Leerzeichen enthalten',
+									},
+								}}
 							/>
 							<OrderInput
 								register={register}
 								regName='plz'
 								placeholder='PLZ'
 								watch={watch('plz')}
+								rules={{
+									required: 'PLZ ist erforderlich',
+									pattern: {
+										value: /^\d{5}$/,
+										message: 'PLZ muss 5-stellig sein',
+									},
+								}}
 							/>
 							<OrderInput
 								register={register}
 								regName='land'
 								placeholder='Land'
 								watch={watch('land')}
+								rules={{
+									required: 'Land ist erforderlich',
+									minLength: { value: 2, message: 'Land zu kurz' },
+									pattern: {
+										value: /^[\p{L}\s]+$/u,
+										message:
+											'Land darf nur Buchstaben und Leerzeichen enthalten',
+									},
+								}}
 							/>
 						</div>
-						<Button className='w-full' type='submit'>
+						<Button className='w-full text-xl py-6' type='submit'>
 							Bestellen
 						</Button>
 					</form>
