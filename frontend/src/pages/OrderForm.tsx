@@ -4,6 +4,9 @@ import Navigation from '@/components/navigation/Navigation'
 import { Button } from '@/components/ui/button'
 import { INPUT_FIRM_DATA, INPUT_PERSON_DATA } from '@/config/inputs.config'
 import { IFormData } from '@/types/order.interface'
+import { cn } from '@/utils/cn'
+import { Building2, User } from 'lucide-react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 const CustomerForm = () => {
@@ -11,6 +14,11 @@ const CustomerForm = () => {
 		mode: 'onChange',
 	})
 
+	type TInputData = 'firm' | 'person'
+
+	const [inputData, setInputData] = useState<TInputData>('firm')
+
+	const isFirm = inputData === 'firm'
 
 	return (
 		<main className='min-h-screen flex flex-col'>
@@ -21,6 +29,49 @@ const CustomerForm = () => {
 					<h1 className='text-4xl font-bold mb-10 text-center'>
 						Bestellformular
 					</h1>
+					<div className='relative flex mb-6 bg-muted p-1 rounded-xl w-full justify-center items-center max-w-lg mx-auto'>
+						{/* Sliding background */}
+						<div
+							className={cn(
+								'absolute top-0 bottom-0 w-1/2 rounded-lg bg-white shadow transition-all duration-300 ease-in-out',
+								{
+									'left-1': isFirm,
+									'left-1/2': !isFirm,
+								},
+							)}
+						/>
+
+						{/* Buttons */}
+						<button
+							type='button'
+							onClick={() => setInputData('firm')}
+							className={cn(
+								'relative z-10 w-1/2 px-6 py-2 rounded-lg transition-colors duration-200',
+								{
+									'text-black': isFirm,
+									'text-muted-foreground': !isFirm,
+								},
+							)}
+						>
+							<Building2 className='inline-block mr-2' size={18} />
+							Firma
+						</button>
+
+						<button
+							type='button'
+							onClick={() => setInputData('person')}
+							className={cn(
+								'relative z-10 w-1/2 px-6 py-2 rounded-lg transition-colors duration-200',
+								{
+									'text-black': !isFirm,
+									'text-muted-foreground': isFirm,
+								},
+							)}
+						>
+							<User className='inline-block mr-2' size={18} />
+							Privatperson
+						</button>
+					</div>
 
 					<form
 						onSubmit={handleSubmit(data =>
@@ -28,22 +79,24 @@ const CustomerForm = () => {
 						)}
 						className='border border-gray-300 rounded-lg p-6 py-7 space-y-5'
 					>
-						{inputData.map((input, index) => (
-							<div key={index}>
-								<OrderInput
-									register={input.register}
-									regName={input.regName}
-									rules={input.rules}
-									placeholder={input.placeholder}
-									watch={watch(input.regName)}
-								/>
-								{formState.errors[input.regName]?.message && (
-									<p className='text-red-500 text-sm mt-1'>
-										{formState.errors[input.regName].message}
-									</p>
-								)}
-							</div>
-						))}
+						{(isFirm ? INPUT_FIRM_DATA : INPUT_PERSON_DATA).map(
+							(input, index) => (
+								<div key={index}>
+									<OrderInput
+										register={register}
+										regName={input.regName}
+										rules={input.rules}
+										placeholder={input.placeholder}
+										watch={watch(input.regName)}
+									/>
+									{formState.errors[input.regName]?.message && (
+										<p className='text-red-500 text-sm mt-1'>
+											{formState.errors[input.regName].message}
+										</p>
+									)}
+								</div>
+							),
+						)}
 
 						<div className='grid grid-cols-1 md:grid-cols-3 gap-4 '>
 							<OrderInput
