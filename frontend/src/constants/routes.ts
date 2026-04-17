@@ -8,5 +8,8 @@ export const ROUTES = {
 
 export const API_ROUTES = {
 	GET_PRODUCTS: '/api/getProducts',
+
 	ADD_ORDER: '/api/addOrder',
+
+	GET_USERS: '/api/getUsers',
 }
