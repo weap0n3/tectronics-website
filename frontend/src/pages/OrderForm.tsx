@@ -3,14 +3,15 @@ import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
 import { Button } from '@/components/ui/button'
 import { INPUT_FIRM_DATA, INPUT_PERSON_DATA } from '@/config/inputs.config'
-import { IFormData } from '@/types/order.interface'
+import { UsersService } from '@/services/users/users.service'
+import { IUser } from '@/types/order.interface'
 import { cn } from '@/utils/cn'
 import { Building2, User } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 const CustomerForm = () => {
-	const { register, handleSubmit, formState, watch } = useForm<IFormData>({
+	const { register, handleSubmit, formState, watch } = useForm<IUser>({
 		mode: 'onChange',
 	})
 

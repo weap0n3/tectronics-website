@@ -1,4 +1,4 @@
-export interface IFormData {
+export interface IUser {
 	name: string
 	ust: string
 	kontaktperson: string
