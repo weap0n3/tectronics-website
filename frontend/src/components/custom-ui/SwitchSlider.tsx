@@ -1,31 +1,11 @@
+import { ISwitchSlider } from '@/types/switch-slider.interface'
 import { cn } from '@/utils/cn'
-import { LucideProps } from 'lucide-react'
-import {
-	Dispatch,
-	ForwardRefExoticComponent,
-	RefAttributes,
-	SetStateAction,
-} from 'react'
-
-interface IOption<T> {
-	value: T
-	label: string
-	icon: ForwardRefExoticComponent<
-		Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>
-	>
-}
-
-interface SwitchProps<T> {
-	options: [IOption<T>, IOption<T>]
-	startValue: T
-	setData: Dispatch<SetStateAction<T>>
-}
 
 export const SwitchSlider = <T extends string>({
 	options,
 	startValue,
 	setData,
-}: SwitchProps<T>) => {
+}: ISwitchSlider<T>) => {
 	const LeftIcon = options[0].icon
 	const RightIcon = options[1].icon
 
