@@ -70,7 +70,7 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 							}}
 							variant='default'
 							size='lg'
-							className='text-lg hover:bg-primary/80 hover:scale-105 transition-all duration-300 ease-in-out'
+							className='text-lg hover:bg-primary/80 hover:scale-105 transition-all duration-300 ease-in-out will-change-transform'
 						>
 							Add to Cart
 							<ArrowUpRightFromSquare size={18} className='ml-2' />
