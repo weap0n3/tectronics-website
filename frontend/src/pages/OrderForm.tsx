@@ -3,7 +3,11 @@ import { SwitchSlider } from '@/components/custom-ui/SwitchSlider'
 import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
 import { Button } from '@/components/ui/button'
-import { INPUT_FIRM_DATA, INPUT_PERSON_DATA } from '@/config/inputs.config'
+import {
+	INPUT_FIRM_DATA,
+	INPUT_PERSON_DATA,
+	PLACE_INFO_DATA,
+} from '@/config/inputs.config'
 import { UsersService } from '@/services/users/users.service'
 import { IUser } from '@/types/order.interface'
 import { Building2, User } from 'lucide-react'
@@ -66,56 +70,22 @@ const CustomerForm = () => {
 						)}
 
 						<div className='grid grid-cols-1 md:grid-cols-3 gap-4 '>
-							<OrderInput
-								register={register}
-								regName='ort'
-								placeholder='Ort'
-								watch={watch('ort')}
-								rules={{
-									required: 'Ort ist erforderlich',
-									minLength: { value: 2, message: 'Ort zu kurz' },
-									pattern: {
-										value: /^[\p{L}\s]+$/u,
-										message:
-											'Ort darf nur Buchstaben und Leerzeichen enthalten',
-									},
-								}}
-							/>
-							<OrderInput
-								register={register}
-								regName='plz'
-								placeholder='PLZ'
-								watch={watch('plz')}
-								rules={{
-									required: 'PLZ ist erforderlich',
-									pattern: {
-										value: /^\d{5}$/,
-										message: 'PLZ muss 5-stellig sein',
-									},
-								}}
-							/>
-							<div>
-								<OrderInput
-									register={register}
-									regName='land'
-									placeholder='Land'
-									watch={watch('land')}
-									rules={{
-										required: 'Land ist erforderlich',
-										minLength: { value: 2, message: 'Land zu kurz' },
-										pattern: {
-											value: /^[\p{L}\s]+$/u,
-											message:
-												'Land darf nur Buchstaben und Leerzeichen enthalten',
-										},
-									}}
-								/>
-								{formState.errors['land']?.message && (
-									<p className='text-red-500 text-sm mt-1'>
-										{formState.errors['land'].message}
-									</p>
-								)}
-							</div>
+							{PLACE_INFO_DATA.map(i => (
+								<div key={i.regName}>
+									<OrderInput
+										register={register}
+										regName={i.regName}
+										placeholder={i.placeholder}
+										watch={watch(i.regName)}
+										rules={i.rules}
+									/>
+									{formState.errors['land']?.message && (
+										<p className='text-red-500 text-sm mt-1'>
+											{formState.errors['land'].message}
+										</p>
+									)}
+								</div>
+							))}
 						</div>
 						<Button className='w-full text-xl py-6' type='submit'>
 							Bestellen

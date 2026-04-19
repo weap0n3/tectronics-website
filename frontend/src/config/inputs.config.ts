@@ -95,3 +95,41 @@ export const INPUT_PERSON_DATA: Omit<IInputData, 'register'>[] = [
 		},
 	},
 ]
+
+export const PLACE_INFO_DATA: Omit<IInputData, 'register'>[] = [
+	{
+		regName: 'ort',
+		placeholder: 'Ort',
+		rules: {
+			required: 'Ort ist erforderlich',
+			minLength: { value: 2, message: 'Ort zu kurz' },
+			pattern: {
+				value: /^[\p{L}\s]+$/u,
+				message: 'Ort darf nur Buchstaben und Leerzeichen enthalten',
+			},
+		},
+	},
+	{
+		regName: 'plz',
+		placeholder: 'PLZ',
+		rules: {
+			required: 'PLZ ist erforderlich',
+			pattern: {
+				value: /^\d{5}$/,
+				message: 'PLZ muss 5-stellig sein',
+			},
+		},
+	},
+	{
+		regName: 'land',
+		placeholder: 'Land',
+		rules: {
+			required: 'Land ist erforderlich',
+			minLength: { value: 2, message: 'Land zu kurz' },
+			pattern: {
+				value: /^[\p{L}\s]+$/u,
+				message: 'Land darf nur Buchstaben und Leerzeichen enthalten',
+			},
+		},
+	},
+]
