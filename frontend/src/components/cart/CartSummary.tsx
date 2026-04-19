@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button'
 import { useCartStore } from '@/store/useCartStore'
 import { MessageSquareWarningIcon } from 'lucide-react'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
-export const CartSummary = () => {
+export const CartSummary = memo(() => {
 	const getTotalPrice = useCartStore(state => state.getTotalPrice)
 
 	return (
@@ -54,4 +55,4 @@ export const CartSummary = () => {
 			</Link>
 		</div>
 	)
-}
+})
