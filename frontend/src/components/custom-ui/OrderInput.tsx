@@ -13,8 +13,6 @@ export type IInputData = {
 
 export const OrderInput = memo(
 	({ register, regName, placeholder, rules, watch }: IInputData) => {
-		console.log(regName, 'rendered')
-
 		return (
 			<div className='flex gap-1 p-1 rounded-xl shadow-md'>
 				<div className='w-full relative'>

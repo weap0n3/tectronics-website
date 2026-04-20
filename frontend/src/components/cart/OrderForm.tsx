@@ -1,0 +1,61 @@
+import { OrderInput } from '@/components/custom-ui/OrderInput'
+import { Button } from '@/components/ui/button'
+import { INPUT_FIRM_DATA, PLACE_INFO_DATA } from '@/config/inputs.config'
+import { UsersService } from '@/services/users/users.service'
+import { IUser } from '@/types/order.interface'
+import { useForm } from 'react-hook-form'
+
+export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
+	const { register, handleSubmit, formState, watch } = useForm<IUser>({
+		mode: 'onChange',
+	})
+
+	return (
+		<form
+			onSubmit={handleSubmit(async data => {
+				console.log('Form submitted with:', data)
+				console.log(await UsersService.getUsers())
+			})}
+			className='border border-gray-300 rounded-lg p-6 py-7 space-y-5'
+		>
+			{INPUT_FIRM_DATA.slice(0, isFirm ? undefined : 3).map((input, index) => (
+				<div key={index}>
+					<OrderInput
+						register={register}
+						regName={input.regName}
+						rules={input.rules}
+						placeholder={input.placeholder}
+						watch={watch(input.regName)}
+					/>
+					{formState.errors[input.regName]?.message && (
+						<p className='text-red-500 text-sm mt-1'>
+							{formState.errors[input.regName].message}
+						</p>
+					)}
+				</div>
+			))}
+
+			<div className='grid grid-cols-1 md:grid-cols-3 gap-4 '>
+				{PLACE_INFO_DATA.map(i => (
+					<div key={i.regName}>
+						<OrderInput
+							register={register}
+							regName={i.regName}
+							placeholder={i.placeholder}
+							watch={watch(i.regName)}
+							rules={i.rules}
+						/>
+						{formState.errors['land']?.message && (
+							<p className='text-red-500 text-sm mt-1'>
+								{formState.errors['land'].message}
+							</p>
+						)}
+					</div>
+				))}
+			</div>
+			<Button className='w-full text-xl py-6' type='submit'>
+				Bestellen
+			</Button>
+		</form>
+	)
+}
