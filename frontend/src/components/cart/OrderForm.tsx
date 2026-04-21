@@ -15,6 +15,7 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 			onSubmit={handleSubmit(async data => {
 				console.log('Form submitted with:', data)
 				console.log(await UsersService.getUsers())
+				UsersService.addUser(data)
 			})}
 			className='border border-gray-300 rounded-lg p-6 py-7 space-y-5'
 		>
@@ -45,9 +46,9 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 							watch={watch(i.regName)}
 							rules={i.rules}
 						/>
-						{formState.errors['land']?.message && (
+						{formState.errors[i.regName]?.message && (
 							<p className='text-red-500 text-sm mt-1'>
-								{formState.errors['land'].message}
+								{formState.errors[i.regName].message}
 							</p>
 						)}
 					</div>

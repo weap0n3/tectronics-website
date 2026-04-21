@@ -21,4 +21,9 @@ export const UsersService = {
 			})
 		return response?.data[0] ?? null
 	},
+	async addUser(user: IUser) {
+		await axios
+			.post(`${API_ROUTES.ADD_USER}`)
+			.catch(err => console.log('Error fetching users:', err))
+	},
 }
