@@ -2,7 +2,7 @@ import { CartItem } from '@/components/cart/CartItem'
 import { CartSummary } from '@/components/cart/CartSummary'
 import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
-import { useCartStore } from '@/store/useCartStore'
+import { useCartStore } from '@/store/cart-store/useCartStore'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 

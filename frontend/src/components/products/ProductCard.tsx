@@ -1,6 +1,6 @@
 import { useProductCard } from '@/components/products/useProductCard'
 import { Button } from '@/components/ui/button.tsx'
-import { useCartStore } from '@/store/useCartStore'
+import { useCartStore } from '@/store/cart-store/useCartStore'
 import { IProduct } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'

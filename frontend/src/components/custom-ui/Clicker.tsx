@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { useCartStore } from '@/store/useCartStore'
+import { useCartStore } from '@/store/cart-store/useCartStore'
 import { IProduct } from '@/types/product.interface'
 
 export const Clicker = ({ item }: { item: IProduct }) => {

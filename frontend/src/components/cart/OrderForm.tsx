@@ -1,7 +1,7 @@
 import { OrderInput } from '@/components/custom-ui/OrderInput'
 import { Button } from '@/components/ui/button'
 import { INPUT_FIRM_DATA, PLACE_INFO_DATA } from '@/config/inputs.config'
-import { UsersService } from '@/services/users/users.service'
+import { useCartStore } from '@/store/cart-store/useCartStore'
 import { IUser } from '@/types/order.interface'
 import { useForm } from 'react-hook-form'
 

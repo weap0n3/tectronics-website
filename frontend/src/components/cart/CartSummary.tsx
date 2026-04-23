@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { useCartStore } from '@/store/useCartStore'
+import { useCartStore } from '@/store/cart-store/useCartStore'
 import { MessageSquareWarningIcon } from 'lucide-react'
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
