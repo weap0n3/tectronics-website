@@ -1,8 +1,13 @@
+import { Notification } from '@/components/custom-ui/Notification'
 import { OrderInput } from '@/components/custom-ui/OrderInput'
 import { Button } from '@/components/ui/button'
 import { INPUT_FIRM_DATA, PLACE_INFO_DATA } from '@/config/inputs.config'
 import { OrdersService } from '@/services/orders/orders.service'
 import { useCartStore } from '@/store/cart-store/useCartStore'
+import {
+	EnumNotification,
+	useNotificationStore,
+} from '@/store/notification-store/useNotificationStore'
 import { IUser } from '@/types/order.interface'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
@@ -12,6 +17,9 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 	const { register, handleSubmit, formState, watch, reset } = useForm<IUser>({
 		mode: 'onChange',
 	})
+
+	const { show } = useNotificationStore()
+
 	useEffect(() => {
 		if (formState.isSubmitSuccessful) {
 			reset()
@@ -20,10 +28,13 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 
 	const onSubmit = async (data: IUser) => {
 		await OrdersService.validateOrder(cart, data)
+		show('Your order was added successfully!', EnumNotification.SUCCESS)
 	}
 
 	return (
 		<>
+			<Notification />
+
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='border border-gray-300 rounded-lg p-6 py-7 space-y-5'
