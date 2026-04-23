@@ -6,10 +6,13 @@ export const ROUTES = {
 	CART: '/cart',
 }
 
+const BASE_API = '/api'
+
 export const API_ROUTES = {
-	GET_PRODUCTS: '/api/getProducts',
+	GET_PRODUCTS: `${BASE_API}/products`,
 
-	ADD_ORDER: '/api/addOrder',
+	ADD_ORDER: `${BASE_API}/addOrder`,
 
-	GET_USERS: '/api/getUsers',
+	GET_USERS: `${BASE_API}/getUsers`,
+	ADD_USER: `${BASE_API}/addUser`,
 }
