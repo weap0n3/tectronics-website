@@ -19,8 +19,5 @@ export const useNotificationStore = create<INotificationStore>(set => ({
 	type: EnumNotification.SUCCESS,
 	show: (message, type, duration = 2500) => {
 		set({ message, type })
-		setTimeout(() => {
-			set({ message: '' })
-		}, duration)
 	},
 }))

@@ -28,7 +28,10 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 
 	const onSubmit = async (data: IUser) => {
 		await OrdersService.validateOrder(cart, data)
-		show('Your order was added successfully!', EnumNotification.SUCCESS)
+		show(
+			'Wir haben Ihre Bestellung erhalten. Sie erhalten die Rechnung voraussichtlich innerhalb einer Woche. Vielen Dank für Ihre Bestellung!',
+			EnumNotification.SUCCESS,
+		)
 	}
 
 	return (
