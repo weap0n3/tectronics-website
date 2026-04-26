@@ -27,6 +27,9 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 	}, [formState.isSubmitSuccessful, reset])
 
 	const onSubmit = async (data: IUser) => {
+		if (!isFirm) {
+			data = { ...data, kontaktperson: null, ust: null }
+		}
 		await OrdersService.validateOrder(cart, data)
 		show(
 			'Wir haben Ihre Bestellung erhalten. Sie erhalten die Rechnung voraussichtlich innerhalb einer Woche. Vielen Dank für Ihre Bestellung!',

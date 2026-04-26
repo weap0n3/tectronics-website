@@ -35,7 +35,7 @@ export const ProductInfo = ({
 				</div>
 				<span className='block w-full h-px lg:border'></span>
 				<div className='flex flex-col lg:flex-row lg:gap-6 gap-3'>
-					<div className='lg:w-3/5 rounded-lg overflow-hidden'>
+					<div className='lg:w-3/5 rounded-lg overflow-hidden lg:max-h-[600px]'>
 						<img
 							src={product.photo}
 							alt=''

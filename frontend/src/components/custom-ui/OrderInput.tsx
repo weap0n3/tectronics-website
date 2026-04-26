@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn'
 import { memo } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 
-export type IInputData = {
+export interface IInputData {
 	register: UseFormRegister<IUser>
 	placeholder: string
 	regName: keyof IUser
