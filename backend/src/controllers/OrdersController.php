@@ -43,7 +43,7 @@ public static function addOrder(): void
 
         $stmt->execute([
             ':user_id' => $user['id'],
-            ':total_price' => $totalPrice
+            ':total_price' => $totalPrice+($totalPrice < 70 ? 10 : 0)
         ]);
 
         $orderId = $pdo->lastInsertId();
