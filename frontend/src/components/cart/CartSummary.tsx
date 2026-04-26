@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button'
 import { useCartStore } from '@/store/cart-store/useCartStore'
+import { calculateCartTotals } from '@/utils/calculate-cart-totals'
 import { MessageSquareWarningIcon } from 'lucide-react'
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
 export const CartSummary = memo(() => {
 	const getTotalPrice = useCartStore(state => state.getTotalPrice())
+	const totals = calculateCartTotals(getTotalPrice)
 
 	return (
 		<div className='w-full lg:w-1/3 border border-gray-300  rounded-lg p-4 h-fit sticky top-20'>
@@ -13,26 +15,24 @@ export const CartSummary = memo(() => {
 
 			<div className='flex justify-between text-lg'>
 				<span>Zwischensumme</span>
-				<span>€ {getTotalPrice.toFixed(2)}</span>
+				<span>€ {totals.subtotal}</span>
 			</div>
 
-			{getTotalPrice < 70 && (
+			{!totals.isShippingFree && (
 				<div className='flex justify-between text-lg'>
 					<span>Liefergebühr</span>
-					<span>€ 10.00</span>
+					<span>€ {totals.shippingCost}</span>
 				</div>
 			)}
 
-			<hr className='mb-4' />
+			<hr className='mt-0.5 mb-2' />
 
-			<div className='flex justify-between font-bold text-lg'>
+			<div className='flex justify-between font-bold text-xl'>
 				<span>Gesamt</span>
-				<span>
-					€ {(getTotalPrice + (getTotalPrice < 70 ? 10 : 0)).toFixed(2)}
-				</span>
+				<span>€ {totals.total}</span>
 			</div>
 
-			{getTotalPrice < 70 && (
+			{!totals.isShippingFree && (
 				<div className='mt-4 text-sm text-yellow-900 bg-orange-300 border border-orange-950 rounded-lg p-3 text-center'>
 					<div className='flex gap-2 items-center justify-center'>
 						<MessageSquareWarningIcon />
