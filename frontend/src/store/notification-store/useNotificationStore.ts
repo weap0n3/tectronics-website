@@ -12,12 +12,14 @@ interface INotificationStore {
 	message: string
 	type: TNotification
 	show: (message: string, type: TNotification) => void
+	hide: () => void
 }
 
 export const useNotificationStore = create<INotificationStore>(set => ({
 	message: '',
 	type: EnumNotification.SUCCESS,
-	show: (message, type, duration = 2500) => {
+	show: (message, type) => {
 		set({ message, type })
 	},
+	hide: () => set({ message: '' }),
 }))

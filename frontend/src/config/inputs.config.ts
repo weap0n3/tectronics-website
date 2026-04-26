@@ -80,8 +80,8 @@ export const PLACE_INFO_DATA: Omit<IInputData, 'register'>[] = [
 		rules: {
 			required: 'PLZ ist erforderlich',
 			pattern: {
-				value: /^\d{5}$/,
-				message: 'PLZ muss 5-stellig sein',
+				value: /^[A-Za-z0-9\s-]{3,10}$/,
+				message: 'Ungültige Postleitzahl',
 			},
 		},
 	},
