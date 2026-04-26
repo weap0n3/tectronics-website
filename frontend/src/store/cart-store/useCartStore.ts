@@ -12,6 +12,7 @@ interface IUseCartStore {
 	removeCartItem: (product: IProduct) => void
 	decreaseCartItem: (product: IProduct) => void
 	getTotalPrice: () => number
+	emptyCart: () => void
 }
 
 const findExistingItem = (cart: ICartItem[], product: IProduct) => {
@@ -56,6 +57,7 @@ export const useCartStore = create<IUseCartStore>()(
 				})),
 			getTotalPrice: () =>
 				get().cart.reduce((total, i) => total + i.quantity * i.price, 0),
+			emptyCart: () => set({ cart: [] }),
 		}),
 		{ name: 'cart-storage' },
 	),

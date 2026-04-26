@@ -13,7 +13,7 @@ import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
-	const { cart } = useCartStore()
+	const { cart, emptyCart } = useCartStore()
 	const { register, handleSubmit, formState, watch, reset } = useForm<IUser>({
 		mode: 'onChange',
 	})
@@ -23,8 +23,9 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 	useEffect(() => {
 		if (formState.isSubmitSuccessful) {
 			reset()
+			emptyCart()
 		}
-	}, [formState.isSubmitSuccessful, reset])
+	}, [formState.isSubmitSuccessful, reset, emptyCart])
 
 	const onSubmit = async (data: IUser) => {
 		if (!isFirm) {
