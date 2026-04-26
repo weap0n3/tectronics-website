@@ -4,21 +4,29 @@ import { formatPrice } from '@/utils/numberFormatter'
 
 type PriceBoxProps = {
 	item: IProduct
-	className?: string
+	classNamePrice?: string
+	classNameDiscPrice?: string
 }
 
-export const PriceBox = ({ item, className }: PriceBoxProps) => {
+export const PriceBox = ({
+	item,
+	classNamePrice,
+	classNameDiscPrice,
+}: PriceBoxProps) => {
 	const formattedPrice = formatPrice(item.price)
 	const formattedDiscPrice = formatPrice(item.discPrice)
 
 	return (
 		<div>
-			<p className='text-xl text-muted-foreground line-through'>
-				{item.discPrice ? `€ ${formatPrice}` : ''}
-			</p>
 			<p
-				className={cn('text-3xl text-primary font-bold text-center', className)}
+				className={cn(
+					'text-xl text-muted-foreground line-through',
+					classNameDiscPrice,
+				)}
 			>
+				{item.discPrice ? `€ ${formattedPrice}` : ''}
+			</p>
+			<p className={cn('text-3xl text-primary font-bold', classNamePrice)}>
 				{item.discPrice ? `€ ${formattedDiscPrice}` : `€ ${formattedPrice}`}
 			</p>
 		</div>

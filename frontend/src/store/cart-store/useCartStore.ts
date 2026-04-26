@@ -56,7 +56,11 @@ export const useCartStore = create<IUseCartStore>()(
 					),
 				})),
 			getTotalPrice: () =>
-				get().cart.reduce((total, i) => total + i.quantity * i.price, 0),
+				get().cart.reduce(
+					(total, i) =>
+						total + i.quantity * (i.discPrice === 0 ? i.price : i.discPrice),
+					0,
+				),
 			emptyCart: () => set({ cart: [] }),
 		}),
 		{ name: 'cart-storage' },
