@@ -1,4 +1,5 @@
 import { Clicker } from '@/components/custom-ui/Clicker'
+import { PriceBox } from '@/components/custom-ui/PriceBox'
 import { Button } from '@/components/ui/button'
 import { useCartStore } from '@/store/cart-store/useCartStore'
 import { IProduct } from '@/types/product.interface'
@@ -24,9 +25,7 @@ export const CartItem = React.memo(({ item }: TCartItemProps) => {
 					{item.description}
 				</p>
 			</div>
-			<p className='text-2xl text-primary text-center '>
-				€ {item.price.toFixed(2)}
-			</p>
+			<PriceBox item={item} className='text-2xl font-normal' />
 			<Clicker item={item} />
 			<div className='w-full flex justify-center'>
 				<Button

@@ -1,3 +1,4 @@
+import { PriceBox } from '@/components/custom-ui/PriceBox'
 import { Button } from '@/components/ui/button.tsx'
 import { IProduct } from '@/types/product.interface'
 import { ArrowLeft } from 'lucide-react'
@@ -47,9 +48,7 @@ export const ProductInfo = ({
 						<h1 className='lg:text-5xl text-center lg:text-start text-2xl font-bold'>
 							{product.name}
 						</h1>
-						<p className='text-4xl text-center lg:text-start font-bold text-primary'>
-							{product.price} €
-						</p>
+						<PriceBox item={product} />
 						<div className='flex flex-col-reverse lg:flex-col gap-3'>
 							<p className='text-lg text-center lg:text-start'>
 								{product.description}

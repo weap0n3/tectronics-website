@@ -1,3 +1,5 @@
+import { MovingArrow } from '@/components/custom-ui/MovingArrow'
+import { PriceBox } from '@/components/custom-ui/PriceBox'
 import { useProductCard } from '@/components/products/useProductCard'
 import { Button } from '@/components/ui/button.tsx'
 import { useCartStore } from '@/store/cart-store/useCartStore'
@@ -5,7 +7,6 @@ import { IProduct } from '@/types/product.interface'
 import clsx from 'clsx'
 import { ArrowUpRightFromSquare } from 'lucide-react'
 import { toast } from 'sonner'
-import { MovingArrow } from '../custom-ui/MovingArrow'
 import { ProductInfo } from './ProductInfo'
 
 interface IProductCardProps {
@@ -53,16 +54,7 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 						Mehr Details
 					</Button>
 					<div className='flex justify-between items-center flex-col lg:flex-row gap-4'>
-						<div>
-							<p className='text-xl text-muted-foreground line-through'>
-								{item.discPrice ? item.price.toFixed(2) + ' €' : ''}
-							</p>
-							<p className='text-3xl text-sky-500 font-bold'>
-								{item.discPrice
-									? item.discPrice.toFixed(2) + ' €'
-									: item.price.toFixed(2) + ' €'}
-							</p>
-						</div>
+						<PriceBox item={item} />
 						<Button
 							onClick={() => {
 								toast.success('Product added to cart!')
