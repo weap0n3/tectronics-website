@@ -24,7 +24,7 @@ export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 				ref={targetRef}
 				id={`product-card-${item.id}`}
 				className={clsx(
-					'flex rounded-lg m-4 p-0 overflow-hidden border duration-1000 ease-in-out lg:flex-row flex-col w-full max-h-[535px]',
+					'flex rounded-lg m-4 p-0 overflow-hidden border duration-1000 ease-in-out lg:flex-row flex-col w-full lg:max-h-[535px]',
 					!isVisible && startPosition,
 					isVisible && 'opacity-100 lg:translate-x-0',
 					!isVisible && 'opacity-0',

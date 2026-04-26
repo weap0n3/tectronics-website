@@ -23,17 +23,19 @@ const Cart = () => {
 			<Navigation />
 			{cart.length == 0 ? (
 				<div className='flex-1 flex items-center justify-center h-fit'>
-					<h1 className='text-4xl font-bold text-center'>The Cart is Empty</h1>
+					<h1 className='lg:text-4xl text-2xl font-bold text-center'>
+						The Cart is Empty
+					</h1>
 				</div>
 			) : (
-				<section className='flex-1 mt-24 pb-7 animate-fade-in'>
-					<div className='container '>
-						<h1 className='text-4xl font-bold mb-10 w-full text-center'>
+				<section className='flex-1 lg:mt-24 mt-20 pb-7 animate-fade-in'>
+					<div className='container lg:px-8 px-5'>
+						<h1 className='lg:text-4xl text-2xl font-bold lg:mb-10 mb-4 w-full text-center'>
 							Your Shopping Cart
 						</h1>
 						<div className='flex flex-col lg:flex-row gap-6'>
 							<div className='flex-1'>
-								<div className='w-full border border-gray-300 rounded-lg p-2'>
+								<div className='w-full border border-gray-300 rounded-lg lg:p-2 p-1 space-y-1 lg:space-y-0'>
 									{cart.map(item => (
 										<CartItem key={item.id} item={item} />
 									))}
