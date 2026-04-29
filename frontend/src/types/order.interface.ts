@@ -26,5 +26,7 @@ export interface IOrderApi extends ICustomer {
 	productName: string
 	quantity: number
 	totalPrice: number
-	status: string
+	status: TStatus
 }
+
+export type TStatus = 'pending' | 'completed'
