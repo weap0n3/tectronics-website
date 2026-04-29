@@ -1,4 +1,5 @@
 import { OrderForm } from '@/components/cart/OrderForm'
+import { Notification } from '@/components/custom-ui/Notification'
 import { SwitchSlider } from '@/components/custom-ui/SwitchSlider'
 import Footer from '@/components/footer/Footer'
 import Navigation from '@/components/navigation/Navigation'
@@ -14,6 +15,8 @@ const OrderPage = () => {
 
 	return (
 		<main className='min-h-screen flex flex-col'>
+			<Notification />
+
 			<Navigation />
 
 			<section className='flex-1 mt-24 pb-7 animate-fade-in'>
