@@ -14,6 +14,9 @@ if ($uri === "/api/getProducts") {
 elseif ($uri === "/api/addOrder" && $_SERVER['REQUEST_METHOD'] === 'POST') {
     OrdersController::addOrder();
 }
+elseif ($uri === "/api/getOrders" && $_SERVER['REQUEST_METHOD'] === 'GET') {
+    OrdersController::getOrders();
+}
 elseif ($uri === "/api/getUsers" && $_SERVER['REQUEST_METHOD'] === 'GET') {
     UsersController::getUsers();
 }
