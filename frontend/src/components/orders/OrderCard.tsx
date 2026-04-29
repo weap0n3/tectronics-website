@@ -1,7 +1,7 @@
+import { ShowMoreArrow } from '@/components/custom-ui/ShowMoreArrow'
 import { IOrder } from '@/types/order.interface'
 import { cn } from '@/utils/cn'
 import { formatPrice } from '@/utils/numberFormatter'
-import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 
 type OrderCardProps = {
@@ -27,16 +27,7 @@ export const OrderCard = ({ order }: OrderCardProps) => {
 						</span>
 					</button>
 				</div>
-				<div className='ml-5'>
-					<button onClick={() => setIsOpen(!isOpen)}>
-						<ChevronDown
-							className={cn(
-								'transition-transform duration-300',
-								isOpen ? 'rotate-180' : '',
-							)}
-						/>
-					</button>
-				</div>
+				<ShowMoreArrow isOpen={isOpen} setIsOpen={setIsOpen} />
 			</div>
 
 			<div
