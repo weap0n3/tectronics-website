@@ -8,15 +8,16 @@ import {
 	EnumNotification,
 	useNotificationStore,
 } from '@/store/notification-store/useNotificationStore'
-import { IUser } from '@/types/order.interface'
+import { ICustomer } from '@/types/order.interface'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 	const { cart, emptyCart } = useCartStore()
-	const { register, handleSubmit, formState, watch, reset } = useForm<IUser>({
-		mode: 'onChange',
-	})
+	const { register, handleSubmit, formState, watch, reset } =
+		useForm<ICustomer>({
+			mode: 'onChange',
+		})
 
 	const { show } = useNotificationStore()
 
@@ -27,7 +28,7 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 		}
 	}, [formState.isSubmitSuccessful, reset, emptyCart])
 
-	const onSubmit = async (data: IUser) => {
+	const onSubmit = async (data: ICustomer) => {
 		if (!isFirm) {
 			data = { ...data, kontaktperson: null, ust: null }
 		}

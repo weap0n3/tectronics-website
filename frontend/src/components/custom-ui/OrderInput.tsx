@@ -1,12 +1,12 @@
-import { IUser } from '@/types/order.interface'
+import { ICustomer } from '@/types/order.interface'
 import { cn } from '@/utils/cn'
 import { memo } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 
 export interface IInputData {
-	register: UseFormRegister<IUser>
+	register: UseFormRegister<ICustomer>
 	placeholder: string
-	regName: keyof IUser
+	regName: keyof ICustomer
 	rules?: object
 	watch?: string
 }
