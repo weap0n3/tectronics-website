@@ -41,7 +41,7 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className='border border-gray-300 rounded-lg p-6 py-7 space-y-5'
+			className='border border-gray-300 rounded-lg md:px-6 md:py-7 md:space-y-5 py-5 px-2.5 space-y-4'
 		>
 			{INPUT_FIRM_DATA.slice(0, isFirm ? undefined : 3).map((input, index) => (
 				<div key={index}>
@@ -53,14 +53,14 @@ export const OrderForm = ({ isFirm }: { isFirm: boolean }) => {
 						watch={watch(input.regName)}
 					/>
 					{formState.errors[input.regName]?.message && (
-						<p className='text-red-500 text-sm mt-1'>
+						<p className='text-red-500 text-sm mt-1 text-center lg:text-start'>
 							{formState.errors[input.regName].message}
 						</p>
 					)}
 				</div>
 			))}
 
-			<div className='grid grid-cols-1 md:grid-cols-3 gap-4 '>
+			<div className='grid grid-cols-1 md:grid-cols-3 md:gap-4 gap-4'>
 				{PLACE_INFO_DATA.map(i => (
 					<div key={i.regName}>
 						<OrderInput

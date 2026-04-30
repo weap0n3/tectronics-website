@@ -24,13 +24,13 @@ export const OrderInput = memo(
 					<label
 						htmlFor={regName}
 						className={cn(
-							'absolute top-0 left-0 p-3.5 text-lg text-muted-foreground transition-all duration-200 ease-in-out',
-							'peer-focus:-translate-y-[2.35rem] peer-focus:text-primary peer-focus:text-base',
-							'peer-not-placeholder-shown:-translate-y-[2.35rem] peer-not-placeholder-shown:text-primary peer-not-placeholder-shown:text-base',
+							'absolute top-0 left-0 lg:p-3.5 p-4 text-muted-foreground transition-all duration-200 ease-in-out',
+							'lg:peer-focus:-translate-y-[2.35rem] peer-focus:-translate-y-[2.1rem] peer-focus:text-primary lg:peer-focus:text-base peer-focus:text-sm',
+							'peer-not-placeholder-shown:-translate-y-[2.35rem] peer-not-placeholder-shown:text-primary lg:peer-not-placeholder-shown:text-base peer-not-placeholder-shown:text-sm',
 							'pointer-events-none rounded-lg',
 							watch !== ''
-								? 'text-muted-foreground -translate-y-[2.35rem] text-base'
-								: '',
+								? 'text-muted-foreground lg:-translate-y-[2.35rem] -translate-y-[2.1rem] lg:text-base text-sm'
+								: 'lg:text-lg',
 						)}
 					>
 						{placeholder}

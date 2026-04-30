@@ -27,7 +27,7 @@ export const CartItem = React.memo(({ item }: TCartItemProps) => {
 			</div>
 			<PriceBox
 				item={item}
-				classNamePrice='text-2xl font-normal'
+				classNamePrice='lg:text-2xl font-normal text-[22px]'
 				classNameDiscPrice='text-lg'
 			/>
 			<Clicker item={item} />

@@ -19,9 +19,9 @@ const OrderPage = () => {
 
 			<Navigation />
 
-			<section className='flex-1 mt-24 pb-7 animate-fade-in'>
-				<div className='container max-w-2xl'>
-					<h1 className='text-4xl font-bold mb-10 text-center'>
+			<section className='flex-1 lg:mt-24 mt-20 pb-7 animate-fade-in'>
+				<div className='container lg:px-8 px-5 max-w-2xl'>
+					<h1 className='lg:text-4xl text-2xl font-bold text-center lg:mb-7 mb-4'>
 						Bestellformular
 					</h1>
 
