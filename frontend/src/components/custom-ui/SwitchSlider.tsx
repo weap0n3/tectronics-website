@@ -28,7 +28,7 @@ export const SwitchSlider = <T extends string>({
 					type='button'
 					onClick={() => setData(b.value)}
 					className={cn(
-						'relative z-10 w-1/2 px-6 py-2 rounded-lg transition-all duration-200 text-lg will-change-transform',
+						'relative z-10 w-1/2 lg:px-6 px-3 py-2 rounded-lg transition-all duration-200 lg:text-lg will-change-transform',
 						{
 							'text-black': startValue === b.value,
 							'text-muted-foreground hover:text-primary':
@@ -37,9 +37,9 @@ export const SwitchSlider = <T extends string>({
 					)}
 				>
 					{index === 0 ? (
-						<LeftIcon className='mr-2 inline-block' />
+						<LeftIcon className='lg:mr-2 inline-block mr-1.5' />
 					) : (
-						<RightIcon className='mr-2 inline-block' />
+						<RightIcon className='lg:mr-2 inline-block mr-1.5' />
 					)}
 					{b.label}
 				</button>
