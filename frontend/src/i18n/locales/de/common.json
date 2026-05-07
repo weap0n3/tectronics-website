@@ -1,3 +1,8 @@
 {
-	"welcome": "Willkommen"
+	"welcome": "Willkommen",
+	"home": "Home",
+	"products": "Produkte",
+	"about": "Über uns",
+	"contact": "Kontakt",
+	"cart": "Warenkorb"
 }

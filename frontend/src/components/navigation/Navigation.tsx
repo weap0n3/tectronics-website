@@ -2,6 +2,7 @@ import { NAV_ITEMS } from '@/config/pages.config'
 import { cn } from '@/utils/cn'
 import { Menu, X } from 'lucide-react'
 import { memo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
@@ -9,6 +10,7 @@ const Navigation = memo(() => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const location = useLocation()
+	const { t, i18n } = useTranslation('common')
 
 	return (
 		<nav className='fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border'>
