@@ -16,7 +16,8 @@
 			"@/hooks/*": ["./src/hooks/*"],
 			"@/store/*": ["./src/store/*"],
 			"@/config/*": ["./src/config/*"],
-			"@/constants/*": ["./src/constants/*"]
+			"@/constants/*": ["./src/constants/*"],
+			"@/i18n/*": ["./src/i18n/*"]
 		},
 		"noImplicitAny": false,
 		"noUnusedParameters": false,

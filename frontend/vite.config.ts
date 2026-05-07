@@ -32,6 +32,7 @@ export default defineConfig(({ mode }) => ({
 			'@store': path.resolve(__dirname, './src/store'),
 			'@config': path.resolve(__dirname, './src/config'),
 			'@constants': path.resolve(__dirname, './src/constants'),
+			'@i18n': path.resolve(__dirname, './src/i18n'),
 		},
 	},
 }))
