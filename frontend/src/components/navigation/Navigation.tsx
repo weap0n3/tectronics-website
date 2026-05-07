@@ -1,4 +1,4 @@
-import { NAV_ITEMS } from '@/config/pages.config'
+import { getNavItems } from '@/config/pages.config'
 import { cn } from '@/utils/cn'
 import { Menu, X } from 'lucide-react'
 import { memo, useState } from 'react'
@@ -10,7 +10,12 @@ const Navigation = memo(() => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const location = useLocation()
+
+	const [lang, setLang] = useState('en')
+
 	const { t, i18n } = useTranslation('common')
+
+	const NAV_ITEMS = getNavItems(t)
 
 	return (
 		<nav className='fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border'>
@@ -49,6 +54,27 @@ const Navigation = memo(() => {
 								</HashLink>
 							)
 						})}
+						<div className='flex gap-1.5'>
+							<p>EN</p>
+							<button
+								onClick={() => {
+									const newLang = lang === 'en' ? 'de' : 'en'
+
+									setLang(newLang)
+									i18n.changeLanguage(newLang)
+								}}
+							>
+								<div className='relative py-2.5 px-5 shadow-inner bg-secondary rounded-full'>
+									<span
+										className={cn(
+											'absolute top-0 border rounded-full bg-primary w-5 h-5',
+											lang === 'en' ? 'left-0' : 'left-1/2',
+										)}
+									/>
+								</div>
+							</button>
+							<p>DE</p>
+						</div>
 					</div>
 
 					{/* Mobile Menu Button */}

@@ -1,9 +1,12 @@
-import { ROUTES } from '@/constants/routes'
+// pages.config.ts
 
-export const NAV_ITEMS = [
-	{ label: 'Home', href: ROUTES.HOME },
-	{ label: 'Products', href: ROUTES.PRODUCTS },
-	{ label: 'About', href: ROUTES.ABOUT },
-	{ label: 'Contact', href: ROUTES.CONTACT },
-	{ label: 'Cart', href: ROUTES.CART },
+import { ROUTES } from '@/constants/routes'
+import { TFunction } from 'i18next'
+
+export const getNavItems = (t: TFunction) => [
+	{ label: t('home'), href: ROUTES.HOME },
+	{ label: t('products'), href: ROUTES.PRODUCTS },
+	{ label: t('about'), href: ROUTES.ABOUT },
+	{ label: t('contact'), href: ROUTES.CONTACT },
+	{ label: t('cart'), href: ROUTES.CART },
 ]
