@@ -17,7 +17,7 @@ interface IProductCardProps {
 export const ProductCard = ({ item, startPosition }: IProductCardProps) => {
 	const { isVisible, isMoreInfoVisible, targetRef, setIsMoreInfoVisible } =
 		useProductCard()
-	const addCartItem = useCartStore(state => state.addCartItem)
+	const addCartItem = useCartStore(state => state.increaseQuantity)
 
 	return (
 		<>

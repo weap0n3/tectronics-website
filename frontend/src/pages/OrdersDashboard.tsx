@@ -32,7 +32,7 @@ const OrdersDashboard = () => {
 				{data
 					?.filter(o => o.orderStatus === orderStatus)
 					.map(order => (
-						<OrderCard order={order} />
+						<OrderCard key={order.email} order={order} />
 					))}
 			</div>
 		</main>

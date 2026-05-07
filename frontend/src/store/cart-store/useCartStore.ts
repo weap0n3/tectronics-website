@@ -8,9 +8,9 @@ interface ICartItem extends IProduct {
 
 interface IUseCartStore {
 	cart: ICartItem[]
-	addCartItem: (product: IProduct, amount?: number) => void
+	increaseQuantity: (product: IProduct, amount?: number) => void
 	removeCartItem: (product: IProduct) => void
-	decreaseCartItem: (product: IProduct) => void
+	decreaseQuantity: (product: IProduct) => void
 	getTotalPrice: () => number
 	emptyCart: () => void
 }
@@ -23,7 +23,7 @@ export const useCartStore = create<IUseCartStore>()(
 	persist(
 		(set, get) => ({
 			cart: [],
-			addCartItem: (product, amount) =>
+			increaseQuantity: (product, amount) =>
 				set(state => {
 					const existingItem = findExistingItem(state.cart, product)
 					if (existingItem) {
@@ -44,7 +44,7 @@ export const useCartStore = create<IUseCartStore>()(
 				set(state => ({
 					cart: state.cart.filter(i => i.id !== product.id),
 				})),
-			decreaseCartItem: product =>
+			decreaseQuantity: product =>
 				set(state => ({
 					cart: state.cart.map(item =>
 						item.id === product.id

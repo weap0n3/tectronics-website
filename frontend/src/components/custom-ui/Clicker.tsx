@@ -7,8 +7,8 @@ export const Clicker = ({ item }: { item: IProduct }) => {
 		state => state.cart.find(i => i.id === item.id)?.quantity ?? 0,
 	)
 
-	const increase = useCartStore(state => state.addCartItem)
-	const decrease = useCartStore(state => state.decreaseCartItem)
+	const increase = useCartStore(state => state.increaseQuantity)
+	const decrease = useCartStore(state => state.decreaseQuantity)
 
 	return (
 		<div className='flex items-center space-x-2 w-full justify-center'>
