@@ -4,5 +4,9 @@
 	"products": "Products",
 	"about": "About",
 	"contact": "Contact",
-	"cart": "Cart"
+	"cart": "Cart",
+	"hero.badge": "Training company of HAK Zell am See",
+	"hero.description": "Your platform for gaming and technology. We simulate real business processes and provide innovative solutions.",
+	"hero.discoverServices": "Discover our services",
+	"hero.learnMore": "Learn more",
 }

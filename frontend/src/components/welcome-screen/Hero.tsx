@@ -1,8 +1,10 @@
 import { Button } from '@/components/ui/button.tsx'
 import { ArrowRight, BriefcaseBusiness } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
+	const { t } = useTranslation('common')
 	return (
 		<section
 			id='home'
@@ -22,7 +24,7 @@ const Hero = () => {
 					<div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 backdrop-blur-sm border border-border mb-8'>
 						<BriefcaseBusiness className='w-5 text-primary' />
 						<span className='text-sm text-muted-foreground'>
-							Übungsfirma der HAK Zell am See
+							{t('hero.badge')}
 						</span>
 					</div>
 
@@ -31,8 +33,7 @@ const Hero = () => {
 					</h1>
 
 					<p className='text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto'>
-						Deine Plattform für Gaming und Technologie. Wir simulieren echte
-						Geschäftsprozesse und bieten innovative Lösungen.
+						{t('hero.description')}
 					</p>
 
 					<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
@@ -41,7 +42,7 @@ const Hero = () => {
 								size='lg'
 								className='bg-gradient-primary shadow-glow hover:shadow-glow hover:scale-105 transition-all'
 							>
-								Entdecke unsere Services
+								{t('hero.discoverServices')}
 								<ArrowRight className='ml-2 w-5 h-5' />
 							</Button>
 						</Link>
@@ -51,7 +52,7 @@ const Hero = () => {
 								variant='secondary'
 								className='hover:scale-105 transition-transform'
 							>
-								Mehr erfahren
+								{t('hero.learnMore')}
 							</Button>
 						</a>
 					</div>
