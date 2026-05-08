@@ -9,4 +9,19 @@
 	"hero.description": "Deine Plattform für Gaming und Technologie. Wir simulieren echte Geschäftsprozesse und bieten innovative Lösungen.",
 	"hero.discoverServices": "Entdecke unsere Services",
 	"hero.learnMore": "Mehr erfahren",
+	"about.title": "Über TecTronics",
+	"about.description": "Als Übungsfirma der HAK Zell am See simulieren wir realistische Unternehmensprozesse und bieten Schülerinnen und Schülern die Möglichkeit, praktische Erfahrungen in einem geschützten Umfeld zu sammeln.",
+	"about.missionTitle": "Unsere Mission",
+	"about.missionDescription": "Wir schaffen eine realistische Lernumgebung, in der Theorie und Praxis verschmelzen. Durch die Simulation echter Geschäftsprozesse bereiten wir unsere Teilnehmer optimal auf die Anforderungen der modernen Arbeitswelt vor.",
+	"about.cards.quality.title": "Qualität & Innovation",
+	"about.cards.quality.description": "Wir streben nach höchster Qualität und kontinuierlicher Verbesserung in allen Bereichen.",
+
+	"about.cards.teamwork.title": "Teamwork",
+	"about.cards.teamwork.description": "Zusammenarbeit und gegenseitige Unterstützung sind die Basis unseres Erfolgs.",
+
+	"about.cards.learning.title": "Praxisorientiertes Lernen",
+	"about.cards.learning.description": "Echte Geschäftsprozesse simulieren und dabei wertvolle Erfahrungen sammeln.",
+
+	"about.cards.sustainability.title": "Nachhaltigkeit",
+	"about.cards.sustainability.description": "Überwiegend papierlose Arbeitsweise für eine bessere Zukunft."
 }

@@ -3,26 +3,22 @@ import { Leaf, Lightbulb, Target, Users } from 'lucide-react'
 export const DESCRIPTIONS = [
 	{
 		icon: Target,
-		title: 'Qualität & Innovation',
-		description:
-			'Wir streben nach höchster Qualität und kontinuierlicher Verbesserung in allen Bereichen.',
+		title: 'about.cards.quality.title',
+		description: 'about.cards.quality.description',
 	},
 	{
 		icon: Users,
-		title: 'Teamwork',
-		description:
-			'Zusammenarbeit und gegenseitige Unterstützung sind die Basis unseres Erfolgs.',
+		title: 'about.cards.teamwork.title',
+		description: 'about.cards.teamwork.description',
 	},
 	{
 		icon: Lightbulb,
-		title: 'Praxisorientiertes Lernen',
-		description:
-			'Echte Geschäftsprozesse simulieren und dabei wertvolle Erfahrungen sammeln.',
+		title: 'about.cards.learning.title',
+		description: 'about.cards.learning.description',
 	},
 	{
 		icon: Leaf,
-		title: 'Nachhaltigkeit',
-		description:
-			'Überwiegend papierlose Arbeitsweise für eine bessere Zukunft.',
+		title: 'about.cards.sustainability.title',
+		description: 'about.cards.sustainability.description',
 	},
 ]

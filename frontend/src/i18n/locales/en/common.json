@@ -9,4 +9,20 @@
 	"hero.description": "Your platform for gaming and technology. We simulate real business processes and provide innovative solutions.",
 	"hero.discoverServices": "Discover our services",
 	"hero.learnMore": "Learn more",
+	"about.title": "About TecTronics",
+	"about.description": "As a training company of HAK Zell am See, we simulate realistic business processes and provide students with the opportunity to gain practical experience in a safe learning environment.",
+	"about.missionTitle": "Our Mission",
+	"about.missionDescription": "We create a realistic learning environment where theory and practice merge. Through the simulation of real business processes, we prepare our participants optimally for the demands of the modern working world.",
+
+	"about.cards.quality.title": "Quality & Innovation",
+	"about.cards.quality.description": "We strive for the highest quality and continuous improvement in all areas.",
+
+	"about.cards.teamwork.title": "Teamwork",
+	"about.cards.teamwork.description": "Collaboration and mutual support are the foundation of our success.",
+
+	"about.cards.learning.title": "Practice-Oriented Learning",
+	"about.cards.learning.description": "Simulating real business processes while gaining valuable experience.",
+
+	"about.cards.sustainability.title": "Sustainability",
+	"about.cards.sustainability.description": "Predominantly paperless workflows for a better future."
 }

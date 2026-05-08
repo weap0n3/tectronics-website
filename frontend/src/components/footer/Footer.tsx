@@ -1,7 +1,10 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear()
+
+	const { t } = useTranslation('common')
 
 	return (
 		<footer id='contact' className='bg-muted/30 border-t border-border py-12'>
@@ -14,9 +17,7 @@ const Footer = () => {
 								TecTronics
 							</span>
 						</div>
-						<p className='text-sm text-muted-foreground'>
-							Übungsfirma der HAK Zell am See
-						</p>
+						<p className='text-sm text-muted-foreground'>{t('hero.badge')}</p>
 					</div>
 
 					<div>
@@ -27,7 +28,7 @@ const Footer = () => {
 									href='#home'
 									className='hover:text-foreground transition-colors'
 								>
-									Home
+									{t('home')}
 								</a>
 							</li>
 							<li>
@@ -35,13 +36,15 @@ const Footer = () => {
 									href='#about'
 									className='hover:text-foreground transition-colors'
 								>
-									Über uns
+									{t('about')}
 								</a>
 							</li>
 						</ul>
 					</div>
 					<div>
-						<h4 className='font-semibold mb-4 text-foreground'>Kontakt</h4>
+						<h4 className='font-semibold mb-4 text-foreground'>
+							{t('contact')}
+						</h4>
 						<ul className='space-y-3 text-sm text-muted-foreground'>
 							<li>
 								<a
