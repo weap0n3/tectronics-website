@@ -1,21 +1,18 @@
-import { getNavItems } from '@/config/pages.config'
+import { NAV_ITEMS } from '@/config/pages.config'
 import { cn } from '@/utils/cn'
 import { Menu, X } from 'lucide-react'
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
+import { LangSwitcher } from './LangSwitcher'
 
 const Navigation = memo(() => {
 	const [isOpen, setIsOpen] = useState(false)
 
+	const { t } = useTranslation('common')
+
 	const location = useLocation()
-
-	const [lang, setLang] = useState('en')
-
-	const { t, i18n } = useTranslation('common')
-
-	const NAV_ITEMS = getNavItems(t)
 
 	return (
 		<nav className='fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border'>
@@ -50,31 +47,11 @@ const Navigation = memo(() => {
 										isActive && 'text-foreground font-semibold',
 									)}
 								>
-									{item.label}
+									{t(item.label)}
 								</HashLink>
 							)
 						})}
-						<div className='flex gap-1.5'>
-							<p>EN</p>
-							<button
-								onClick={() => {
-									const newLang = lang === 'en' ? 'de' : 'en'
-
-									setLang(newLang)
-									i18n.changeLanguage(newLang)
-								}}
-							>
-								<div className='relative py-2.5 px-5 shadow-inner bg-secondary rounded-full'>
-									<span
-										className={cn(
-											'absolute top-0 border rounded-full bg-primary w-5 h-5',
-											lang === 'en' ? 'left-0' : 'left-1/2',
-										)}
-									/>
-								</div>
-							</button>
-							<p>DE</p>
-						</div>
+						<LangSwitcher />
 					</div>
 
 					{/* Mobile Menu Button */}
